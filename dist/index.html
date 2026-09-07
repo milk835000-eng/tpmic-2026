@@ -336,7 +336,13 @@
     .registration-panel p { margin-bottom: 0; color: var(--muted); }
     .registration-head .btn { flex: 0 0 auto; }
     .registration-form-wrap { padding: 0 18px 18px; }
-    .registration-form { display: block; width: 100%; height: 2067px; border: 0; border-radius: 16px; background: white; }
+    .registration-form { display: block; width: 100%; border: 0; border-radius: 16px; background: white; }
+    .registration-form.conference-form { height: 1886px; }
+    .registration-form.submission-form { height: 2027px; }
+    .submission-panel { margin-top: 62px; overflow: hidden; border-radius: 24px; color: var(--ink); background: #eef8fa; border: 1px solid rgba(255,255,255,.5); box-shadow: 0 28px 70px rgba(3,43,56,.3); }
+    .submission-panel .registration-head { background: rgba(255,255,255,.97); }
+    .submission-panel h2 { margin-bottom: 10px; font-size: clamp(1.8rem, 4vw, 2.8rem); }
+    .submission-panel p { margin-bottom: 0; color: var(--muted); }
     .venue-grid { display: grid; grid-template-columns: .92fr 1.08fr; gap: 26px; }
     .venue-card { padding: 32px; border-radius: 20px; background: white; border: 1px solid var(--line); }
     .venue-card h3 { font-size: 1.25rem; }
@@ -501,7 +507,7 @@
             <!-- TODO: 待主辦單位提供正式報名網址 -->
             <a class="btn primary" href="#registration" aria-label="前往線上報名表單">立即報名 <span aria-hidden="true">→</span></a>
             <!-- TODO: 待主辦單位提供正式海報投稿網址 -->
-            <a class="btn secondary disabled placeholder-link" href="#posters" aria-label="研究海報投稿，目前資訊待公告">研究海報投稿</a>
+            <a class="btn secondary" href="#journal-submission" aria-label="前往期刊投稿報名表">期刊投稿</a>
             <a class="btn ghost" href="#agenda">查看議程</a>
           </div>
         </div>
@@ -632,8 +638,7 @@
           <p>歡迎健康管理、預防醫學、健康長壽、腦健康、生活型態醫學、精準醫療及相關跨領域研究投稿，與國內外專家分享研究成果。</p>
           <div class="poster-kicker" aria-label="投稿特色"><span>FREE SUBMISSION</span><span>CHINESE / ENGLISH</span><span>DIGITAL PDF</span></div>
           <div class="poster-actions">
-            <!-- TODO: 待補正式投稿網址 -->
-            <a class="btn disabled placeholder-link" href="#important-dates" aria-label="立即投稿，投稿資訊待公告">立即投稿 · 待公告</a>
+            <a class="btn" href="#journal-submission" aria-label="前往期刊投稿報名表">立即投稿</a>
             <!-- TODO: 待補海報範本檔案 -->
             <a class="btn outline disabled placeholder-link" href="#poster-format" aria-label="下載海報範本，檔案待提供">下載海報範本 · 待提供</a>
           </div>
@@ -659,6 +664,15 @@
           <div class="poster-structure"><strong>建議內容架構 · RECOMMENDED STRUCTURE</strong><div class="pill-list"><span>Title</span><span>Authors</span><span>Affiliations</span><span>Aim / Objectives</span><span>Methods</span><span>Results</span><span>Conclusion</span></div></div>
         </div>
       </div>
+      <div class="container submission-panel reveal" id="journal-submission">
+          <div class="registration-head">
+            <div><div class="eyebrow">Journal Submission</div><h2>期刊投稿報名表</h2><p>請於下方完成 Google 表單；若表單未顯示，可改用新視窗開啟。</p></div>
+            <a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLSc5dfBEefRQ6RMRmxKZ2ikAHONjwob1_FnoaEiFJdOafAac1A/viewform?usp=header" target="_blank" rel="noopener noreferrer">新視窗開啟投稿表 <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="registration-form-wrap">
+            <iframe class="registration-form submission-form" title="2026 國際健康管理與 TPMIC 期刊投稿報名表" src="https://docs.google.com/forms/d/e/1FAIpQLSc5dfBEefRQ6RMRmxKZ2ikAHONjwob1_FnoaEiFJdOafAac1A/viewform?embedded=true" loading="lazy" frameborder="0" marginheight="0" marginwidth="0">載入中…</iframe>
+          </div>
+      </div>
     </section>
 
     <section class="section" id="important-dates">
@@ -677,10 +691,10 @@
         <div class="registration-panel reveal">
           <div class="registration-head">
             <div><div class="eyebrow">Registration</div><h2>線上報名</h2><p>請於下方完成 Google 表單；若表單未顯示，可改用新視窗開啟。</p></div>
-            <a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLSc5dfBEefRQ6RMRmxKZ2ikAHONjwob1_FnoaEiFJdOafAac1A/viewform" target="_blank" rel="noopener noreferrer">新視窗開啟報名表 <span aria-hidden="true">↗</span></a>
+            <a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLScZYFQjeQBe2adJY1vzz6adAgUJarlGfbLBiXeBKXoH6nUhbg/viewform" target="_blank" rel="noopener noreferrer">新視窗開啟報名表 <span aria-hidden="true">↗</span></a>
           </div>
           <div class="registration-form-wrap">
-            <iframe class="registration-form" title="2026 國際健康管理與 TPMIC 研究成果發表會報名表" src="https://docs.google.com/forms/d/e/1FAIpQLSc5dfBEefRQ6RMRmxKZ2ikAHONjwob1_FnoaEiFJdOafAac1A/viewform?embedded=true" loading="lazy" frameborder="0" marginheight="0" marginwidth="0">載入中…</iframe>
+            <iframe class="registration-form conference-form" title="2026 國際健康管理與 TPMIC 研討會報名表" src="https://docs.google.com/forms/d/e/1FAIpQLScZYFQjeQBe2adJY1vzz6adAgUJarlGfbLBiXeBKXoH6nUhbg/viewform?embedded=true" loading="lazy" frameborder="0" marginheight="0" marginwidth="0">載入中…</iframe>
           </div>
         </div>
       </div>
