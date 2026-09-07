@@ -329,9 +329,13 @@
     .date-step { width: 38px; height: 38px; display: grid; place-items: center; margin: 0 auto 16px; border-radius: 50%; background: var(--mint); color: var(--teal); font-weight: 900; }
     .date-card h3 { margin-bottom: 8px; }
     .date-value { color: var(--gold); font-size: 1.22rem; font-weight: 900; }
-    .registration-panel { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 35px; padding: 42px; border-radius: 24px; background: linear-gradient(125deg, #eef8fa, #e7f5ef); border: 1px solid #cfe7e5; }
+    .registration-panel { overflow: hidden; border-radius: 24px; background: linear-gradient(125deg, #eef8fa, #e7f5ef); border: 1px solid #cfe7e5; box-shadow: var(--shadow); }
+    .registration-head { display: flex; align-items: center; justify-content: space-between; gap: 30px; padding: 34px 38px; border-top: 7px solid var(--orange); }
     .registration-panel h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); }
     .registration-panel p { margin-bottom: 0; color: var(--muted); }
+    .registration-head .btn { flex: 0 0 auto; }
+    .registration-form-wrap { padding: 0 18px 18px; }
+    .registration-form { display: block; width: 100%; height: 2067px; border: 0; border-radius: 16px; background: white; }
     .venue-grid { display: grid; grid-template-columns: .92fr 1.08fr; gap: 26px; }
     .venue-card { padding: 32px; border-radius: 20px; background: white; border: 1px solid var(--line); }
     .venue-card h3 { font-size: 1.25rem; }
@@ -435,7 +439,8 @@
       .agenda-table tr.is-hidden { display: none; }
       .poster-guide-grid { grid-template-columns: 1fr; }
       .poster-sheet-wrap { min-height: 250px; }
-      .registration-panel { grid-template-columns: 1fr; padding: 30px 24px; }
+      .registration-head { align-items: flex-start; flex-direction: column; padding: 28px 24px; }
+      .registration-form-wrap { padding: 0 8px 8px; }
       .footer-contact { text-align: left; }
     }
 
@@ -493,7 +498,7 @@
           </div>
           <div class="hero-actions">
             <!-- TODO: 待主辦單位提供正式報名網址 -->
-            <a class="btn primary disabled placeholder-link" href="#registration" aria-label="立即報名，目前資訊待公告">立即報名 <span aria-hidden="true">→</span></a>
+            <a class="btn primary" href="#registration" aria-label="前往線上報名表單">立即報名 <span aria-hidden="true">→</span></a>
             <!-- TODO: 待主辦單位提供正式海報投稿網址 -->
             <a class="btn secondary disabled placeholder-link" href="#posters" aria-label="研究海報投稿，目前資訊待公告">研究海報投稿</a>
             <a class="btn ghost" href="#agenda">查看議程</a>
@@ -669,9 +674,13 @@
     <section class="section alt" id="registration">
       <div class="container">
         <div class="registration-panel reveal">
-          <div><div class="eyebrow">Registration</div><h2>一起探索健康長壽的未來</h2><p>報名資格、名額、截止日期與報名方式將由主辦單位另行公告。</p></div>
-          <!-- TODO: 待補正式活動報名網址 -->
-          <a class="btn primary disabled placeholder-link" href="#faq" aria-label="活動報名資訊待公告">報名資訊待公告</a>
+          <div class="registration-head">
+            <div><div class="eyebrow">Registration</div><h2>線上報名</h2><p>請於下方完成 Google 表單；若表單未顯示，可改用新視窗開啟。</p></div>
+            <a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLSc5dfBEefRQ6RMRmxKZ2ikAHONjwob1_FnoaEiFJdOafAac1A/viewform" target="_blank" rel="noopener noreferrer">新視窗開啟報名表 <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="registration-form-wrap">
+            <iframe class="registration-form" title="2026 國際健康管理與 TPMIC 研究成果發表會報名表" src="https://docs.google.com/forms/d/e/1FAIpQLSc5dfBEefRQ6RMRmxKZ2ikAHONjwob1_FnoaEiFJdOafAac1A/viewform?embedded=true" loading="lazy" frameborder="0" marginheight="0" marginwidth="0">載入中…</iframe>
+          </div>
         </div>
       </div>
     </section>
@@ -719,7 +728,7 @@
       <div class="container">
         <div class="section-head reveal"><div class="eyebrow">Frequently Asked Questions</div><h2>常見問題</h2></div>
         <div class="faq-list">
-          <article class="faq-item reveal"><h3><button class="faq-question" type="button" aria-expanded="true" aria-controls="faq-a1">活動是否需要報名？</button></h3><div class="faq-answer" id="faq-a1"><p>需要。正式報名方式、名額及截止日期尚待主辦單位公告。</p></div></article>
+          <article class="faq-item reveal"><h3><button class="faq-question" type="button" aria-expanded="true" aria-controls="faq-a1">活動是否需要報名？</button></h3><div class="faq-answer" id="faq-a1"><p>需要。請於本頁「線上報名」區塊完成 Google 表單。</p></div></article>
           <article class="faq-item reveal"><h3><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-a2">研究海報需要繳交紙本嗎？</button></h3><div class="faq-answer" id="faq-a2"><p>投稿階段僅需繳交單頁 PDF 電子檔，無須寄送紙本；現場展示方式將另行公告。</p></div></article>
           <article class="faq-item reveal"><h3><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-a3">海報可以使用英文撰寫嗎？</button></h3><div class="faq-answer" id="faq-a3"><p>可以。研究海報可使用中文或英文撰寫。</p></div></article>
           <article class="faq-item reveal"><h3><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-a4">海報投稿是否收費？</button></h3><div class="faq-answer" id="faq-a4"><p>本次研究海報投稿免收投稿費。</p></div></article>
