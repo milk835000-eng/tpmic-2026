@@ -343,6 +343,20 @@
     .registration-panel h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); }
     .registration-panel p { margin-bottom: 0; color: var(--muted); }
     .registration-head .btn { flex: 0 0 auto; }
+    .registration-notes { padding: 0 38px 30px; }
+    .registration-notes h3 { margin: 0 0 14px; color: var(--blue-dark); font-size: 1.08rem; }
+    .registration-facts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .registration-fact { min-height: 92px; padding: 16px 17px; border: 1px solid rgba(37,168,168,.2); border-radius: 17px; background: rgba(255,255,255,.78); }
+    .registration-fact span { display: block; margin-bottom: 4px; color: var(--muted); font-size: .78rem; font-weight: 700; }
+    .registration-fact strong { display: block; color: var(--blue-dark); font-size: 1rem; line-height: 1.45; }
+    .registration-fact.important { border-color: rgba(242,121,59,.32); background: rgba(255,244,237,.9); }
+    .registration-fact.important strong { color: #c95d29; }
+    .registration-details { display: grid; grid-template-columns: .34fr .66fr; gap: 12px; margin-top: 12px; }
+    .registration-detail { padding: 17px 18px; border-radius: 17px; background: rgba(255,255,255,.74); border: 1px solid rgba(37,168,168,.17); }
+    .registration-detail h4 { margin: 0 0 8px; color: var(--blue-dark); font-size: .9rem; }
+    .registration-detail p { color: var(--ink); font-size: .9rem; font-weight: 800; }
+    .credit-list { display: flex; flex-wrap: wrap; gap: 7px; }
+    .credit-list span { padding: 5px 9px; border: 1px solid rgba(37,168,168,.2); border-radius: 999px; color: #246676; background: #f5fcfb; font-size: .72rem; font-weight: 700; }
     .registration-form-wrap { padding: 0 18px 18px; }
     .registration-form { display: block; width: 100%; border: 0; border-radius: 16px; background: white; }
     .registration-form.conference-form { height: 1886px; }
@@ -542,6 +556,9 @@
       .poster-guide-grid { grid-template-columns: 1fr; }
       .poster-sheet-wrap { min-height: 250px; }
       .registration-head { align-items: flex-start; flex-direction: column; padding: 28px 24px; }
+      .registration-notes { padding: 0 24px 24px; }
+      .registration-facts { grid-template-columns: 1fr 1fr; }
+      .registration-details { grid-template-columns: 1fr; }
       .registration-form-wrap { padding: 0 8px 8px; }
       .footer-contact { text-align: left; }
     }
@@ -553,6 +570,7 @@
       .speaker-card { grid-template-columns: 105px 1fr; }
       .speaker-info { padding: 16px 14px; }
       .speaker-topic { display: none; }
+      .registration-facts { grid-template-columns: 1fr; }
       .countdown { gap: 2px; }
       .count-box strong { font-size: 1.25rem; }
       .agenda-table td, .agenda-table td:nth-child(5) { grid-template-columns: 76px 1fr; }
@@ -710,7 +728,7 @@
               <tr data-period="am"><td data-label="時間"><span class="agenda-time">09:50–10:30</span></td><td data-label="場次"><span class="badge symposium">Symposium II</span><span class="agenda-sub">30 min + QA</span></td><td data-label="主題"><span class="agenda-title">Improving Brain Health by Dementia Prevention: How Recent Dementia Research Will Impact Health Management</span><details class="agenda-note"><summary>內容摘要</summary><p>Brain health and dementia prevention; translating recent dementia research into health management.</p></details></td><td data-label="講者"><strong>Christopher Chen</strong></td><td data-label="服務單位">National University of Singapore</td><td data-label="主持人">徐榮隆 醫師<span class="agenda-sub">台灣失智症協會理事長</span></td></tr>
               <tr class="break-row" data-period="am"><td data-label="時間"><span class="agenda-time">10:30–11:00</span></td><td data-label="場次"><span class="badge break">Coffee Break</span></td><td data-label="主題"><span class="agenda-title">茶敘交流</span><span class="agenda-sub">Poster Session／Exhibition Booths 同步進行</span></td><td data-label="講者">—</td><td data-label="服務單位">—</td><td data-label="主持人">—</td></tr>
               <tr data-period="am"><td data-label="時間"><span class="agenda-time">11:00–11:40</span></td><td data-label="場次"><span class="badge symposium">Symposium III</span><span class="agenda-sub">30 min + QA</span></td><td data-label="主題"><span class="agenda-title">From Lifestyle Medicine to Longevity Medicine: A Clinical Approach to Extending Healthspan</span><span class="agenda-sub">從生活型態醫學到長壽醫學：延長健康餘命的臨床策略</span></td><td data-label="講者"><strong>蔡孟修 主任</strong></td><td data-label="服務單位">奇美醫院預防醫學科<br>台灣生活型態醫學會</td><td data-label="主持人">李愛先 醫師</td></tr>
-              <tr class="break-row" data-period="am"><td data-label="時間"><span class="agenda-time">11:40–13:10</span></td><td data-label="場次"><span class="badge break">Lunch Break</span></td><td data-label="主題"><span class="agenda-title">午餐時間</span></td><td data-label="講者">—</td><td data-label="服務單位">—</td><td data-label="主持人">—</td></tr>
+              <tr class="break-row" data-period="am"><td data-label="時間"><span class="agenda-time">11:40–13:10</span></td><td data-label="場次"><span class="badge break">Lunch Break</span></td><td data-label="主題"><span class="agenda-title">午間休息</span><span class="agenda-sub">本活動不提供午餐</span></td><td data-label="講者">—</td><td data-label="服務單位">—</td><td data-label="主持人">—</td></tr>
               <tr data-period="pm"><td data-label="時間"><span class="agenda-time">13:10–13:50</span></td><td data-label="場次"><span class="badge symposium">Symposium IV</span><span class="agenda-sub">30 min + QA</span></td><td data-label="主題"><span class="agenda-title">AD-Care Plan and Brain Health Care</span><details class="agenda-note"><summary>內容摘要</summary><p>Clinical and treatment perspectives, including biomarkers and recent advances in dementia care and treatment in Korea.</p></details></td><td data-label="講者"><strong>SangYun Kim</strong></td><td data-label="服務單位">Seoul National University</td><td data-label="主持人">白明奇 教授</td></tr>
               <tr data-period="pm"><td data-label="時間"><span class="agenda-time">13:50–14:30</span></td><td data-label="場次"><span class="badge symposium">Symposium V</span><span class="agenda-sub">30 min + QA</span></td><td data-label="主題"><span class="agenda-title">PCCT 精準影像與健康檢查</span><span class="agenda-sub">正式題目待確認</span></td><td data-label="講者"><span class="badge tbd">講者待確認</span></td><td data-label="服務單位"><span class="agenda-sub">候選講者及單位由主辦單位確認後更新</span></td><td data-label="主持人">賴彥君 醫師</td></tr>
               <tr class="break-row" data-period="pm"><td data-label="時間"><span class="agenda-time">14:30–15:00</span></td><td data-label="場次"><span class="badge break">Coffee Break</span></td><td data-label="主題"><span class="agenda-title">茶敘與交流</span><span class="agenda-sub">Exhibition Booths／Networking</span></td><td data-label="講者">—</td><td data-label="服務單位">—</td><td data-label="主持人">—</td></tr>
@@ -779,6 +797,19 @@
             <div><div class="eyebrow">Registration</div><h2>線上報名</h2><p>請於下方完成 Google 表單；若表單未顯示，可改用新視窗開啟。</p></div>
             <a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLScZYFQjeQBe2adJY1vzz6adAgUJarlGfbLBiXeBKXoH6nUhbg/viewform" target="_blank" rel="noopener noreferrer">新視窗開啟報名表 <span aria-hidden="true">↗</span></a>
           </div>
+          <aside class="registration-notes" aria-labelledby="registration-notes-title">
+            <h3 id="registration-notes-title">報名須知</h3>
+            <div class="registration-facts">
+              <div class="registration-fact important"><span>報名期間</span><strong>即日起至 11 月 6 日</strong></div>
+              <div class="registration-fact"><span>活動費用</span><strong>免費</strong></div>
+              <div class="registration-fact"><span>名額上限</span><strong>290 人</strong></div>
+              <div class="registration-fact"><span>身分限制</span><strong>不限特定身分</strong></div>
+            </div>
+            <div class="registration-details">
+              <div class="registration-detail"><h4>午餐供應</h4><p>本活動不提供午餐</p></div>
+              <div class="registration-detail"><h4>繼續教育積分</h4><div class="credit-list"><span>西醫師</span><span>醫檢師</span><span>放射師</span><span>專科護理師</span><span>護理師</span><span>台灣神經學學會</span><span>台灣精神醫學會</span><span>台灣內科醫學會</span><span>社團法人台灣老年精神醫學會</span><span>台灣臨床失智症學會</span><span>台灣生活型態學會</span></div></div>
+            </div>
+          </aside>
           <div class="registration-form-wrap">
             <iframe class="registration-form conference-form" title="2026 國際健康管理與 TPMIC 研討會報名表" src="https://docs.google.com/forms/d/e/1FAIpQLScZYFQjeQBe2adJY1vzz6adAgUJarlGfbLBiXeBKXoH6nUhbg/viewform?embedded=true" loading="lazy" frameborder="0" marginheight="0" marginwidth="0">載入中…</iframe>
           </div>
