@@ -234,12 +234,6 @@
     .topic-card h3 { position: relative; z-index: 1; margin: 18px 0 3px; font-size: 1.04rem; }
     .topic-card .topic-en { position: relative; z-index: 1; margin: 0 0 10px; color: var(--card-accent); font: 700 .75rem/1.45 Inter, system-ui; }
     .topic-card .topic-desc { position: relative; z-index: 1; margin: 0; color: var(--muted); font-size: .8rem; line-height: 1.55; }
-    .highlight-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
-    .highlight-card { padding: 28px 22px; border-radius: 19px; background: white; border: 1px solid var(--line); transition: transform .2s, box-shadow .2s; }
-    .highlight-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
-    .highlight-icon { width: 48px; height: 48px; display: grid; place-items: center; margin-bottom: 22px; border-radius: 14px; background: var(--mint); color: var(--teal); font-weight: 900; }
-    .highlight-card h3 { margin-bottom: 8px; font-size: 1.05rem; }
-    .highlight-card p { margin: 0; color: var(--muted); font-size: .9rem; }
     .speaker-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
     .speaker-card { overflow: hidden; border-radius: 20px; background: white; border: 1px solid var(--line); box-shadow: 0 12px 35px rgba(20,76,96,.06); }
     .speaker-portrait { width: 100%; height: auto; aspect-ratio: 5 / 4; display: grid; place-items: center; position: relative; overflow: hidden; background: linear-gradient(150deg, #e5f4f5, #f8fbfb 52%, #e9f7f0); }
@@ -461,11 +455,10 @@
     .topic-card.theme-life { --card-accent: #65b994; }
     .topic-card.theme-precision { --card-accent: #ef9363; }
 
-    .highlight-card, .speaker-card, .venue-card, .faq-item, .org-block {
+    .speaker-card, .venue-card, .faq-item, .org-block {
       border-color: rgba(37,168,168,.17); background: rgba(255,255,255,.88); box-shadow: 0 14px 42px rgba(4,87,105,.055); backdrop-filter: blur(8px);
     }
-    .highlight-card, .speaker-card, .venue-card, .org-block { border-radius: 24px; }
-    .highlight-icon { border-radius: 16px; background: linear-gradient(145deg, var(--mint), #fff0e7); }
+    .speaker-card, .venue-card, .org-block { border-radius: 24px; }
     #speakers { background: radial-gradient(circle at 92% 20%, rgba(255,184,141,.14), transparent 25rem), rgba(255,255,255,.74); }
     .speaker-portrait { background: linear-gradient(145deg, #daf5f2, #f9fcfb 54%, #fff0e7); }
 
@@ -518,7 +511,7 @@
       .hero-grid { grid-template-columns: 1fr .78fr; gap: 25px; }
       .hero-art { min-height: 390px; }
       .keyvisual-frame { width: min(430px, 40vw); height: 440px; }
-      .highlight-grid, .speaker-grid { grid-template-columns: repeat(2, 1fr); }
+      .speaker-grid { grid-template-columns: repeat(2, 1fr); }
       .agenda-table { table-layout: auto; }
       .agenda-table th:nth-child(n) { width: auto; }
       .agenda-table th:nth-child(5), .agenda-table td:nth-child(5) { display: none; }
@@ -540,7 +533,7 @@
       .count-box:first-child { border-left: 0; }
       .about-grid, .poster-grid, .venue-grid, .org-grid, .footer-grid { grid-template-columns: 1fr; gap: 30px; }
       .topic-cloud { grid-template-columns: 1fr 1fr; }
-      .highlight-grid, .speaker-grid { grid-template-columns: 1fr; }
+      .speaker-grid { grid-template-columns: 1fr; }
       .speaker-grid { gap: 14px; }
       .speaker-card { display: grid; grid-template-columns: 125px 1fr; }
       .speaker-portrait { height: 100%; min-height: 205px; aspect-ratio: auto; }
@@ -669,18 +662,6 @@
             <article class="topic-card theme-life"><div class="topic-top"><span class="num">03</span><span class="topic-symbol life" aria-hidden="true"></span></div><h3>生活型態醫學</h3><p class="topic-en">Lifestyle &amp; Longevity Medicine</p><p class="topic-desc">以生活介入延長健康餘命</p></article>
             <article class="topic-card theme-precision"><div class="topic-top"><span class="num">04</span><span class="topic-symbol precision" aria-hidden="true"></span></div><h3>精準醫療與健康管理</h3><p class="topic-en">Precision Medicine &amp; Health Management</p><p class="topic-desc">生物標記、醫學影像與個人化管理</p></article>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section alt" id="highlights">
-      <div class="container">
-        <div class="section-head reveal"><div class="eyebrow">Conference Highlights</div><h2>連結國際觀點與在地實踐</h2><p class="section-lead">從前沿研究到臨床應用，建立跨領域健康管理的交流平台。</p></div>
-        <div class="highlight-grid">
-          <article class="highlight-card reveal"><div class="highlight-icon">INT</div><h3>國際專家演講</h3><p>新加坡、韓國及臺灣專家分享健康長壽與腦健康新知。</p></article>
-          <article class="highlight-card reveal"><div class="highlight-icon">HM</div><h3>健康管理新趨勢</h3><p>串聯預防醫學、生活型態醫學與精準健康檢查。</p></article>
-          <article class="highlight-card reveal"><div class="highlight-icon">R</div><h3>TPMIC 研究發表</h3><p>以短講及海報展示交流跨機構、跨領域研究成果。</p></article>
-          <article class="highlight-card reveal"><div class="highlight-icon">＋</div><h3>交流與合作</h3><p>海報展示、展覽攤位與交流時段同步進行。</p></article>
         </div>
       </div>
     </section>
