@@ -255,11 +255,15 @@
     .photo-note { position: absolute; bottom: 12px; padding: 4px 10px; border-radius: 999px; color: var(--muted); background: rgba(255,255,255,.82); font-size: .68rem; }
     .speaker-info { padding: 20px; }
     .speaker-info h3 { margin-bottom: 5px; font-size: 1.08rem; }
+    .speaker-degree { display: inline-block; margin-left: 4px; color: var(--teal); font-size: .74rem; font-weight: 800; letter-spacing: .02em; }
     .speaker-info p { min-height: 46px; margin-bottom: 12px; color: var(--muted); font-size: .82rem; }
     .speaker-topic { padding-top: 12px; border-top: 1px solid var(--line); color: var(--blue-dark); font-size: .79rem; font-weight: 700; line-height: 1.45; }
     .speaker-bio { margin-top: 12px; padding-top: 10px; border-top: 1px dashed var(--line); }
     .speaker-bio summary { color: var(--teal); font-size: .76rem; font-weight: 800; cursor: pointer; }
     .speaker-bio p { min-height: 0; margin: 8px 0 0; color: var(--muted); font-size: .78rem; line-height: 1.58; }
+    .speaker-bio-label { margin-top: 12px; color: var(--blue-dark); font-size: .74rem; font-weight: 900; }
+    .speaker-bio ul { margin: 6px 0 0; padding-left: 18px; color: var(--muted); font-size: .76rem; line-height: 1.58; }
+    .speaker-bio li + li { margin-top: 4px; }
 
     /* Agenda */
     .agenda-controls { display: flex; justify-content: center; gap: 8px; margin: -20px 0 28px; }
@@ -673,7 +677,7 @@
           </article>
           <article class="speaker-card reveal">
             <div class="speaker-portrait kim-photo"><img class="portrait-kim" src="講者資訊/Photo_SYKim%20Profil%2001.jpg" alt="SangYun Kim 教授大頭照" loading="lazy" decoding="async"></div>
-            <div class="speaker-info"><h3>SangYun Kim</h3><p>Professor Emeritus, Department of Neurology, SNU College of Medicine<br>Research Professor, Seoul National University Bundang Hospital</p><div class="speaker-topic">AD-Care Plan and Brain Health Care</div><details class="speaker-bio"><summary>講者簡介</summary><p>研究涵蓋阿茲海默症、巴金森氏症、血管性認知障礙及神經退化蛋白病變，並投入神經退化生物標記與腦健康照護研究。</p></details></div>
+            <div class="speaker-info"><h3>SangYun Kim <span class="speaker-degree">M.D., Ph.D.</span></h3><p>Professor Emeritus, Department of Neurology, Seoul National University College of Medicine<br>Research Professor, Seoul National University Bundang Hospital</p><div class="speaker-topic">AD-Care Plan and Brain Health Care</div><details class="speaker-bio"><summary>講者簡介與研究專長</summary><p>首爾國立大學醫學院神經學名譽教授、首爾國立大學盆唐醫院研究教授，曾長期任職該院臨床神經科學研究所；1985 年取得醫學學位，1998 年取得博士學位。</p><div class="speaker-bio-label">主要研究領域</div><ul><li>阿茲海默症、巴金森氏症、血管性認知障礙與人類普利昂蛋白病</li><li>神經退化疾病生物標記、致病機轉及失智症臨床遺傳學</li><li>阿茲海默症防治與腦健康照護</li></ul><div class="speaker-bio-label">學術與專業服務</div><p>現任多家生技公司的資深科學顧問，並曾任韓國失智症協會及韓國老年醫學會榮譽會長；自 2003 年起帶領 Alzheimer’s disease all marker（ADAM）研究團隊，亦參與多個失智症與腦科學研究組織。</p></details></div>
           </article>
           <article class="speaker-card reveal">
             <div class="speaker-portrait"><div class="initials">蔡</div><span class="photo-note">照片待更新</span></div>
