@@ -4,28 +4,28 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="2026年亞東醫院第六屆國際健康管理與TPMIC研究成果發表會｜以健康長壽為導向的健康管理">
-  <meta name="theme-color" content="#176B87">
+  <meta name="theme-color" content="#08798A">
   <title>2026 國際健康管理與 TPMIC 研究成果發表會｜亞東紀念醫院</title>
   <script>document.documentElement.classList.add('js');</script>
   <style>
     :root {
-      --blue: #07546d;
-      --blue-dark: #033e56;
-      --teal: #0b8090;
-      --teal-bright: #25a4a4;
-      --mint: #e6f5f3;
-      --ink: #073d55;
-      --muted: #526f79;
-      --gold: #e56e2f;
-      --gold-soft: #fff0e5;
+      --blue: #08798a;
+      --blue-dark: #064b63;
+      --teal: #25a8a8;
+      --teal-bright: #57c8c3;
+      --mint: #e4f8f5;
+      --ink: #06445b;
+      --muted: #53747e;
+      --gold: #f18a56;
+      --gold-soft: #fff1e8;
       --paper: #ffffff;
-      --surface: #f4f9f8;
-      --line: #cfe3e4;
-      --purple: #7d62a9;
-      --orange: #ed7132;
-      --peach: #f7c9ae;
-      --shadow: 0 22px 58px rgba(5, 73, 91, .13);
-      --radius: 16px;
+      --surface: #f4fbfa;
+      --line: #cce9e7;
+      --purple: #49a1a7;
+      --orange: #f2793b;
+      --peach: #ffd4ba;
+      --shadow: 0 24px 64px rgba(4, 87, 105, .11);
+      --radius: 24px;
       --header-h: 76px;
       --max: 1180px;
     }
@@ -35,7 +35,11 @@
     body {
       margin: 0;
       color: var(--ink);
-      background: var(--surface);
+      background:
+        radial-gradient(circle at 3% 12%, rgba(87, 200, 195, .12), transparent 23rem),
+        radial-gradient(circle at 97% 30%, rgba(255, 183, 139, .13), transparent 25rem),
+        var(--surface);
+      background-attachment: fixed;
       font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
       line-height: 1.72;
       -webkit-font-smoothing: antialiased;
@@ -53,7 +57,7 @@
     .skip-link:focus { top: 12px; }
     .container { width: min(calc(100% - 40px), var(--max)); margin-inline: auto; }
     .section { padding: 96px 0; position: relative; }
-    .section.alt { background: var(--paper); }
+    .section.alt { background: rgba(255,255,255,.76); }
     .section-head { max-width: 760px; margin: 0 auto 46px; text-align: center; }
     .eyebrow {
       display: inline-flex; align-items: center; gap: 9px; margin-bottom: 12px;
@@ -74,7 +78,7 @@
     }
     .badge.symposium { background: #e8f3f8; color: var(--blue-dark); }
     .badge.break { background: var(--gold-soft); color: #805b19; }
-    .badge.short { background: #efeafb; color: #5e468e; }
+    .badge.short { background: #e4f7f5; color: #147a80; }
     .badge.opening { background: var(--mint); color: #0f7068; }
     .badge.tbd { background: #f0f2f4; color: #66727a; }
 
@@ -388,6 +392,98 @@
     .back-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
     .js .reveal { opacity: 0; transform: translateY(22px); transition: opacity .65s ease, transform .65s ease; }
     .js .reveal.visible { opacity: 1; transform: none; }
+
+    /* Longevity visual system */
+    .section { isolation: isolate; }
+    .section-head h2, .about-copy h2 { color: var(--blue-dark); }
+    .section-head::after {
+      content: ""; display: block; width: 48px; height: 4px; margin: 22px auto 0;
+      border-radius: 999px; background: linear-gradient(90deg, var(--teal-bright), var(--orange));
+    }
+    .site-header { background: rgba(245,253,252,.88); border-bottom-color: rgba(37,168,168,.15); }
+    .site-header.scrolled { background: rgba(255,255,255,.94); box-shadow: 0 12px 36px rgba(4,87,105,.08); }
+    .nav-links a:hover, .nav-links a.active { color: var(--blue-dark); background: rgba(87,200,195,.13); }
+    .nav-cta { background: linear-gradient(135deg, var(--blue), var(--teal)) !important; box-shadow: 0 10px 24px rgba(8,121,138,.18); }
+
+    .hero {
+      background:
+        linear-gradient(100deg, rgba(255,255,255,.98) 0%, rgba(246,253,251,.95) 45%, rgba(227,247,245,.62) 72%, rgba(255,236,223,.58) 100%),
+        radial-gradient(circle at 86% 18%, rgba(242,121,59,.20), transparent 30%), #f4fbfa;
+    }
+    .hero::before, .hero::after { border-color: rgba(37,168,168,.18); }
+    .hero-tag { background: linear-gradient(135deg, var(--blue-dark), var(--blue)); border-radius: 12px; box-shadow: 0 12px 28px rgba(4,75,99,.14); }
+    .hero-theme { border-radius: 0 16px 16px 0; background: rgba(255,255,255,.76); backdrop-filter: blur(10px); }
+    .btn { border-radius: 14px; }
+    .btn.primary { background: linear-gradient(135deg, var(--blue-dark), var(--blue)); }
+    .btn.secondary { background: linear-gradient(135deg, var(--teal), #12919e); }
+    .btn.ghost { background: rgba(255,255,255,.76); backdrop-filter: blur(9px); }
+    .keyvisual-frame { border-color: rgba(255,255,255,.9); box-shadow: 0 34px 88px rgba(4,87,105,.19), 0 0 0 1px rgba(87,200,195,.14); }
+    .keyvisual-stamp { border-radius: 14px 0 0 14px; background: linear-gradient(135deg, var(--orange), #ef8b58); }
+
+    .event-panel {
+      background: linear-gradient(90deg, var(--orange) 0 8px, rgba(255,255,255,.91) 8px);
+      border-color: rgba(37,168,168,.16); backdrop-filter: blur(14px);
+    }
+    .calendar-icon { border-radius: 16px; background: linear-gradient(145deg, var(--orange), #f39b68); box-shadow: 0 12px 28px rgba(242,121,59,.22); }
+    .count-box strong { color: var(--blue-dark); }
+
+    #about { background: radial-gradient(circle at 4% 24%, rgba(87,200,195,.13), transparent 23rem); }
+    .about-statement { border-left-color: var(--orange); border-radius: 0 16px 16px 0; background: rgba(255,255,255,.78); }
+    .value-tags span { border-color: rgba(37,168,168,.25); background: rgba(255,255,255,.82); }
+    .pillars-panel { border-color: rgba(37,168,168,.17); background: linear-gradient(145deg, rgba(255,255,255,.8), rgba(222,247,243,.78)); box-shadow: var(--shadow); }
+    .topic-card { border-radius: 24px; background: rgba(255,255,255,.9); border-color: rgba(37,168,168,.16); }
+    .topic-card.theme-brain { --card-accent: #42aeb5; }
+    .topic-card.theme-life { --card-accent: #65b994; }
+    .topic-card.theme-precision { --card-accent: #ef9363; }
+
+    .highlight-card, .speaker-card, .date-card, .venue-card, .faq-item, .org-block {
+      border-color: rgba(37,168,168,.17); background: rgba(255,255,255,.88); box-shadow: 0 14px 42px rgba(4,87,105,.055); backdrop-filter: blur(8px);
+    }
+    .highlight-card, .speaker-card, .date-card, .venue-card, .org-block { border-radius: 24px; }
+    .highlight-icon { border-radius: 16px; background: linear-gradient(145deg, var(--mint), #fff0e7); }
+    #speakers { background: radial-gradient(circle at 92% 20%, rgba(255,184,141,.14), transparent 25rem), rgba(255,255,255,.74); }
+    .speaker-portrait { background: linear-gradient(145deg, #daf5f2, #f9fcfb 54%, #fff0e7); }
+
+    .filter-btn { border-color: rgba(37,168,168,.22); background: rgba(255,255,255,.82); }
+    .filter-btn.active { background: linear-gradient(135deg, var(--blue), var(--teal)); border-color: transparent; box-shadow: 0 10px 24px rgba(8,121,138,.18); }
+    .agenda-wrap { border-radius: 24px; border-color: rgba(37,168,168,.18); box-shadow: var(--shadow); }
+    .agenda-table th { background: linear-gradient(90deg, var(--blue-dark), #087987); }
+    .agenda-table tbody tr:hover { background: #f1fbf9; }
+    .agenda-table tr.break-row { background: #fff6ef; }
+    .agenda-table tr.short-row { background: #f2fbfa; }
+
+    .poster-section {
+      color: var(--ink);
+      background: radial-gradient(circle at 92% 8%, rgba(255,180,134,.4), transparent 28%), linear-gradient(132deg, #edfafa 0%, #daf4f2 58%, #fff0e6 100%);
+    }
+    .poster-section::before { border-color: rgba(8,121,138,.13); box-shadow: inset 0 0 0 80px rgba(255,255,255,.12), inset 0 0 0 160px rgba(37,168,168,.035); }
+    .poster-section::after { opacity: .2; background-image: radial-gradient(rgba(8,121,138,.34) .7px, transparent .7px); }
+    .poster-copy .eyebrow { color: var(--teal); }
+    .poster-copy h2 { color: var(--blue-dark); }
+    .poster-copy p { color: var(--muted); }
+    .poster-kicker span { color: var(--blue-dark); background: rgba(255,255,255,.47); border-color: rgba(8,121,138,.2); }
+    .poster-actions .btn { background: linear-gradient(135deg, var(--blue-dark), var(--blue)); color: white; }
+    .poster-actions .btn.outline { color: var(--blue-dark); background: rgba(255,255,255,.68); border-color: rgba(8,121,138,.25); }
+    .poster-guide { border-color: rgba(255,255,255,.82); background: rgba(255,255,255,.84); box-shadow: 0 30px 76px rgba(4,87,105,.15); }
+    .poster-sheet-wrap { background: linear-gradient(145deg, #dff6f3, #fff2ea); }
+
+    #important-dates { background: radial-gradient(circle at 10% 90%, rgba(87,200,195,.12), transparent 25rem); }
+    .date-card { position: relative; overflow: hidden; }
+    .date-card::before { content: ""; position: absolute; inset: 0 0 auto; height: 4px; background: linear-gradient(90deg, var(--teal-bright), var(--orange)); }
+    .date-step { background: linear-gradient(145deg, var(--mint), #fff0e7); color: var(--blue); box-shadow: 0 8px 20px rgba(8,121,138,.1); }
+    .date-value { color: var(--orange); }
+    .registration-panel { background: linear-gradient(125deg, rgba(235,250,249,.96), rgba(255,240,231,.84)); border-color: rgba(37,168,168,.2); }
+    .registration-form { border-radius: 20px; }
+    .address { border-left-color: var(--orange); border-radius: 0 16px 16px 0; background: linear-gradient(90deg, var(--mint), rgba(255,241,232,.48)); }
+    .transport-icon { border-radius: 14px; background: linear-gradient(145deg, var(--mint), #fff0e7); }
+    .map-frame { background: linear-gradient(145deg, #d9f4f1, #fff1e8); }
+
+    .faq-item { border-radius: 18px; }
+    .faq-question:hover { background: rgba(228,248,245,.58); }
+    .org-logo { background: linear-gradient(145deg, var(--blue), var(--teal)); box-shadow: 0 12px 26px rgba(8,121,138,.18); }
+    .org-list span { background: linear-gradient(135deg, #eefaf8, #fff4ed); }
+    footer { background: radial-gradient(circle at 90% 0, rgba(87,200,195,.18), transparent 28%), linear-gradient(120deg, #06445b, #08798a); }
+    .back-top { background: linear-gradient(145deg, var(--blue), var(--teal)); }
 
     @media (max-width: 1040px) {
       .menu-toggle { display: block; }
