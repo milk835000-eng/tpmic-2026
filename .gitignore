@@ -1,0 +1,20 @@
+# Internal planning and procurement files at the project root
+/*.xlsx
+/*.pdf
+/ids.indexOf(x)!
+
+# Source-only speaker logistics and CV files
+/講者資訊/*.docx
+/講者資訊/*.pdf
+/講者資訊/ETicket_*
+/講者資訊/同日經濟艙報價_*
+
+# Unused hero design iterations
+/assets/hero-femh-background0.png
+/assets/hero-femh-background1.png
+/assets/hero-femh-background12.png
+/assets/hero-femh-background123.png
+/assets/hero-femh-background12313.png
+/assets/hero-femh-background124.png
+/assets/hero-femh-background222.png
+/assets/hero-femh-background3.png
