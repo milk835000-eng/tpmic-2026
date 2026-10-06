@@ -107,14 +107,18 @@
     }
     .brand-mark img { display: block; width: 100%; height: 100%; object-fit: contain; mix-blend-mode: multiply; }
     .brand-text { display: grid; line-height: 1.22; }
+    .brand-primary-row { display: flex; align-items: center; gap: 18px; }
     .brand-text strong { display: flex; align-items: baseline; color: var(--blue-dark); font-size: 1.18rem; font-weight: 900; letter-spacing: .015em; }
     .brand-divider { margin-inline: 5px; color: rgba(6,75,99,.34); font-weight: 500; }
-    .brand-dept { color: #008946; font-size: 1rem; font-weight: 900; letter-spacing: .045em; }
+    .brand-dept, .brand-cultivation-text { color: #008946; font-size: 1rem; font-weight: 900; letter-spacing: .045em; }
+    .brand-cultivation { display: inline-flex; align-items: center; gap: 7px; color: #087f45; white-space: nowrap; }
+    .brand-cultivation img { display: block; width: auto; height: 38px; object-fit: contain; }
+    .brand-cultivation-text { line-height: 1.25; }
     .brand-event { margin-top: 5px; color: #466976; font-size: .82rem; font-weight: 700; letter-spacing: .02em; white-space: nowrap; }
-    .nav-links { display: flex; align-items: center; justify-content: space-between; width: min(610px, 52vw); gap: 10px; list-style: none; margin: 0; padding: 0; }
+    .nav-links { display: flex; align-items: center; justify-content: space-between; width: min(680px, 57vw); gap: 8px; list-style: none; margin: 0; padding: 0; }
     .nav-links a {
-      display: block; padding: 11px 13px; border-radius: 10px; color: #36566a;
-      text-decoration: none; font-size: .98rem; font-weight: 800; white-space: nowrap; transition: .2s;
+      display: block; padding: 11px 10px; border-radius: 10px; color: #36566a;
+      text-decoration: none; font-size: 1rem; font-weight: 800; white-space: nowrap; transition: .2s;
     }
     .nav-links a:hover, .nav-links a.active { color: var(--blue); background: #e9f5f7; }
     .nav-cta { background: var(--blue) !important; color: white !important; padding-inline: 17px !important; }
@@ -162,6 +166,8 @@
     .conference-info { max-width: 680px; margin: 0 0 28px; padding-top: 18px; border-top: 1px solid rgba(8,121,138,.2); }
     .conference-name { margin: 0 0 7px; color: var(--blue-dark); font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif; font-size: clamp(1.12rem, 1.55vw, 1.45rem); font-weight: 900; line-height: 1.4; letter-spacing: -.018em; }
     .hero-subtitle { max-width: 650px; margin: 0; color: var(--muted); font-size: clamp(.78rem, 1vw, .92rem); font-weight: 600; line-height: 1.55; }
+    .hero-poster-highlight { display: inline-flex; align-items: center; gap: 9px; margin: -8px 0 22px; padding: 9px 14px; border: 1px solid rgba(8,121,138,.2); border-radius: 999px; color: var(--blue-dark); background: rgba(255,255,255,.82); box-shadow: 0 8px 22px rgba(4,87,105,.08); font-size: .88rem; font-weight: 900; line-height: 1.4; }
+    .hero-poster-highlight::before { content: ""; width: 8px; height: 8px; flex: 0 0 auto; border-radius: 50%; background: var(--orange); box-shadow: 0 0 0 4px rgba(242,111,51,.13); }
     .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
     .btn {
       display: inline-flex; align-items: center; justify-content: center; gap: 9px;
@@ -262,10 +268,12 @@
     .speaker-portrait::after { width: 120px; height: 120px; left: -35px; bottom: -25px; }
     .speaker-portrait img { position: absolute; inset: 0; z-index: 2; width: 100%; height: 100%; object-fit: cover; }
     .speaker-portrait img.portrait-andrea { object-position: 50% 50%; }
+    .speaker-portrait img.portrait-kuanming { object-position: 50% 20%; }
     .speaker-portrait img.portrait-chiu { object-position: 50% 18%; }
     .speaker-portrait img.portrait-christopher { object-position: 50% 50%; }
     .speaker-portrait img.portrait-shih { object-fit: cover; object-position: 50% 50%; background: #7086a3; }
     .speaker-portrait img.portrait-tsai { object-position: 50% 22%; }
+    .speaker-portrait img.portrait-liu { object-position: 50% 16%; }
     .speaker-portrait img.portrait-lin { object-position: 50% 20%; }
     .speaker-portrait.kim-photo { background: #858583; }
     .speaker-portrait img.portrait-kim { object-fit: contain; object-position: 50% 50%; }
@@ -289,9 +297,11 @@
     .speaker-external-link:hover { color: var(--teal); border-color: var(--teal-bright); background: white; }
 
     /* Agenda */
-    .agenda-controls { display: flex; justify-content: center; gap: 8px; margin: -20px 0 28px; }
+    .agenda-controls { display: flex; justify-content: center; gap: 8px; margin: -20px 0 18px; }
     .filter-btn { padding: 9px 16px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); background: white; font-weight: 800; cursor: pointer; }
     .filter-btn.active { color: white; background: var(--blue); border-color: var(--blue); }
+    .agenda-poster-notice { display: flex; align-items: center; justify-content: center; gap: 10px; margin: 0 0 18px; padding: 13px 18px; border: 1px solid rgba(8,121,138,.2); border-radius: 14px; color: var(--blue-dark); background: linear-gradient(90deg, rgba(220,244,242,.86), rgba(255,247,240,.9)); font-size: .92rem; font-weight: 800; line-height: 1.55; text-align: center; }
+    .agenda-poster-notice::before { content: "研究海報展"; flex: 0 0 auto; padding: 4px 9px; border-radius: 999px; color: white; background: var(--teal); font-size: .72rem; font-weight: 900; letter-spacing: .05em; }
     .agenda-wrap { overflow: hidden; border: 1px solid var(--line); border-radius: 20px; background: white; box-shadow: 0 12px 35px rgba(20,76,96,.06); }
     .agenda-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
     .agenda-table th { padding: 20px 14px; background: var(--blue-dark); color: white; text-align: center; font-size: 1rem; font-weight: 900; letter-spacing: .06em; border-right: 1px solid rgba(255,255,255,.16); }
@@ -342,6 +352,69 @@
     details.agenda-note { margin-top: 8px; }
     details.agenda-note summary { color: var(--teal); font-size: .82rem; font-weight: 800; cursor: pointer; }
     details.agenda-note p { margin: 6px 0 0; color: var(--muted); font-size: .82rem; line-height: 1.55; }
+
+    /* Health innovation exhibition */
+    .exhibition-section { overflow: hidden; background: linear-gradient(180deg, #f4fbfb 0%, #ffffff 100%); }
+    .exhibition-section::before { content: ""; position: absolute; width: 460px; height: 460px; right: -220px; top: -230px; border: 1px solid rgba(37,168,168,.15); border-radius: 50%; box-shadow: inset 0 0 0 72px rgba(37,168,168,.03), inset 0 0 0 145px rgba(37,168,168,.025); }
+    .exhibition-intro { position: relative; z-index: 1; display: flex; align-items: flex-end; justify-content: space-between; gap: 28px; margin-bottom: 28px; }
+    .exhibition-intro .section-head { margin: 0; text-align: left; }
+    .exhibition-intro .section-head::after { margin-left: 0; margin-right: 0; }
+    .exhibition-time { flex: 0 0 auto; max-width: 330px; padding: 14px 17px; border: 1px solid rgba(242,121,59,.25); border-radius: 16px; background: #fff8f2; color: #8d4c2c; font-size: .85rem; line-height: 1.6; }
+    .exhibition-time strong { display: block; color: #b65224; font-size: .92rem; }
+    .exhibitor-group { position: relative; z-index: 1; }
+    .exhibitor-group + .exhibitor-group { margin-top: 34px; padding-top: 30px; border-top: 1px solid var(--line); }
+    .exhibitor-group-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; margin-bottom: 16px; }
+    .exhibitor-group-head h3 { margin: 0; color: var(--blue-dark); font-size: 1.28rem; }
+    .exhibitor-group-head h3 span { margin-left: 7px; color: var(--teal); font: 800 .73rem/1.4 Inter, system-ui, sans-serif; letter-spacing: .08em; text-transform: uppercase; }
+    .exhibitor-group-head p { max-width: 600px; margin: 0; color: var(--muted); font-size: .84rem; text-align: right; }
+    .exhibitor-grid { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; }
+    .exhibitor-card { min-width: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 19px; background: white; box-shadow: 0 12px 34px rgba(4,87,105,.07); transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease; }
+    .exhibitor-card:hover { transform: translateY(-3px); border-color: rgba(37,168,168,.42); box-shadow: 0 17px 38px rgba(4,87,105,.11); }
+    .exhibitor-media { position: relative; width: 100%; min-height: 112px; display: grid; place-items: center; padding: 18px; border: 0; background: linear-gradient(135deg, #e8f7f5, #edf5f9); color: inherit; font: inherit; cursor: zoom-in; overflow: hidden; }
+    .exhibitor-media span { width: 62px; height: 62px; display: grid; place-items: center; border-radius: 18px; color: white; background: linear-gradient(135deg, var(--blue), var(--teal)); font: 900 1.08rem/1 Inter, system-ui, sans-serif; letter-spacing: .03em; box-shadow: 0 10px 24px rgba(4,121,138,.18); }
+    .exhibitor-media img { display: block; width: 100%; height: 112px; object-fit: contain; }
+    .exhibitor-media.has-image { min-height: 0; padding: 0; background: #eef9fa; }
+    .exhibitor-media.has-image img { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; }
+    .exhibitor-media img { transition: transform .25s ease, filter .25s ease; }
+    .exhibitor-media:hover img, .exhibitor-media:focus-visible img { transform: scale(1.018); filter: brightness(.92); }
+    .exhibitor-media::after { content: "放大檢視"; position: absolute; right: 10px; bottom: 10px; padding: 6px 10px 6px 28px; border-radius: 999px; background: rgba(4,68,88,.88); color: white; font-size: .72rem; font-weight: 900; line-height: 1.2; letter-spacing: .02em; box-shadow: 0 5px 16px rgba(5,49,69,.2); opacity: 0; transform: translateY(4px); transition: opacity .2s ease, transform .2s ease; }
+    .exhibitor-media::before { content: "＋"; position: absolute; z-index: 1; right: 73px; bottom: 15px; color: white; font-size: .82rem; font-weight: 900; line-height: 1; opacity: 0; transform: translateY(4px); transition: opacity .2s ease, transform .2s ease; }
+    .exhibitor-media:hover::after, .exhibitor-media:hover::before, .exhibitor-media:focus-visible::after, .exhibitor-media:focus-visible::before { opacity: 1; transform: translateY(0); }
+    .exhibitor-media:focus-visible { outline: 3px solid var(--orange); outline-offset: -3px; }
+    .exhibitor-copy { padding: 19px 20px 21px; }
+    .exhibitor-meta { display: flex; align-items: center; justify-content: space-between; gap: 9px; margin-bottom: 9px; }
+    .exhibitor-type { display: block; color: var(--teal); font: 800 .69rem/1.4 Inter, system-ui, sans-serif; letter-spacing: .1em; text-transform: uppercase; }
+    .exhibitor-status { flex: 0 0 auto; padding: 4px 8px; border-radius: 999px; font-size: .7rem; font-weight: 900; line-height: 1.25; }
+    .exhibitor-status.onsite { color: #a8491e; background: #fff0e5; border: 1px solid rgba(242,121,59,.28); }
+    .exhibitor-status.dm { color: #356879; background: #edf6f8; border: 1px solid #d4e8eb; }
+    .exhibitor-copy h3 { margin: 0 0 8px; color: var(--blue-dark); font-size: 1.06rem; line-height: 1.42; }
+    .exhibitor-copy h3 a { color: inherit; text-decoration: none; }
+    .exhibitor-copy h3 a:hover, .exhibitor-copy h3 a:focus-visible { color: var(--teal); text-decoration: underline; text-underline-offset: 3px; }
+    .exhibitor-copy p { margin: 0; color: var(--muted); font-size: .88rem; line-height: 1.6; }
+    .exhibitor-link { display: inline-flex; align-items: center; justify-content: center; margin-top: 14px; padding: 8px 13px; border: 1px solid #b9dfe2; border-radius: 999px; background: #edf9f8; color: var(--blue-dark); font-size: .8rem; font-weight: 900; line-height: 1.25; text-decoration: none; transition: background .18s ease, border-color .18s ease, transform .18s ease; }
+    .exhibitor-link:hover, .exhibitor-link:focus-visible { background: #d9f1ee; border-color: var(--teal); transform: translateY(-1px); }
+    .exhibitor-card.organizer { border-color: rgba(242,121,59,.28); }
+    .exhibitor-card.organizer .exhibitor-media { background: linear-gradient(135deg, #fff2e9, #fffaf6); }
+    .exhibitor-card.organizer .exhibitor-media span { background: linear-gradient(135deg, #e76d31, #f1a04d); }
+    .exhibitor-card.organizer .exhibitor-type { color: var(--orange); }
+    .exhibitor-card.dm-card { background: #fbfdfe; box-shadow: 0 9px 25px rgba(4,87,105,.045); }
+    .image-lightbox { width: min(1120px, calc(100vw - 30px)); max-width: 1120px; max-height: calc(100dvh - 30px); padding: 0; border: 0; border-radius: 20px; background: #071f29; color: white; box-shadow: 0 28px 90px rgba(0,0,0,.42); overflow: hidden; }
+    .image-lightbox::backdrop { background: rgba(2,19,27,.82); backdrop-filter: blur(3px); }
+    .image-lightbox-head { display: flex; align-items: center; justify-content: space-between; gap: 18px; min-height: 56px; padding: 10px 12px 10px 20px; background: #0b3442; }
+    .image-lightbox-title { margin: 0; font-size: .95rem; line-height: 1.4; font-weight: 900; }
+    .image-lightbox-close { flex: 0 0 auto; width: 38px; height: 38px; border: 0; border-radius: 50%; background: rgba(255,255,255,.12); color: white; font-size: 1.45rem; line-height: 1; cursor: pointer; }
+    .image-lightbox-close:hover, .image-lightbox-close:focus-visible { background: rgba(255,255,255,.22); }
+    .image-lightbox-stage { position: relative; display: grid; place-items: center; min-height: min(68vh, 720px); padding: 24px 72px; background: #061820; }
+    .image-lightbox-stage img { display: block; max-width: 100%; max-height: min(68vh, 720px); object-fit: contain; }
+    .image-lightbox-nav { position: absolute; top: 50%; width: 44px; height: 52px; border: 0; border-radius: 14px; background: rgba(255,255,255,.14); color: white; font-size: 1.6rem; line-height: 1; cursor: pointer; transform: translateY(-50%); }
+    .image-lightbox-nav:hover, .image-lightbox-nav:focus-visible { background: rgba(255,255,255,.25); }
+    .image-lightbox-prev { left: 14px; }
+    .image-lightbox-next { right: 14px; }
+    .image-lightbox-foot { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 12px 20px 14px; background: #0b3442; }
+    .image-lightbox-caption { margin: 0; color: #e8f7f8; font-size: .84rem; line-height: 1.5; }
+    .image-lightbox-count { flex: 0 0 auto; color: #a9dadd; font: 800 .78rem/1.4 Inter, system-ui, sans-serif; }
+    .image-lightbox button:focus-visible { outline: 3px solid var(--orange); outline-offset: 2px; }
+    .exhibition-note { position: relative; z-index: 1; margin: 19px 0 0; color: var(--muted); font-size: .82rem; text-align: center; }
 
     /* Posters */
     .poster-section { overflow: hidden; background: radial-gradient(circle at 90% 8%, rgba(247,201,174,.24), transparent 25%), linear-gradient(130deg, #033e56 0%, #07546d 56%, #0b8090 100%); color: white; }
@@ -404,24 +477,25 @@
     .registration-panel p { margin-bottom: 0; color: var(--muted); }
     .registration-head .btn { flex: 0 0 auto; }
     .registration-notes { padding: 0 38px 30px; }
-    .early-bird-card { display: grid; grid-template-columns: auto 1fr; gap: 15px; align-items: center; margin: 0 0 22px; padding: 18px 20px; border: 1px solid rgba(242,121,59,.38); border-radius: 18px; background: linear-gradient(135deg, #fff4e9, #fffaf4); box-shadow: 0 10px 26px rgba(184,81,34,.08); }
-    .early-bird-icon { width: 48px; height: 48px; display: grid; place-items: center; border-radius: 14px; color: white; background: linear-gradient(135deg, #ef783a, #f1a04d); font-family: "Segoe UI Emoji", "Apple Color Emoji", sans-serif; font-size: 1.35rem; }
-    .early-bird-card strong { display: block; margin-bottom: 3px; color: #a9471e; font-size: 1.05rem; }
-    .early-bird-card p { margin: 0; color: #744932; font-size: 1rem; line-height: 1.65; }
+    .early-bird-card { display: grid; grid-template-columns: auto 1fr; gap: 12px; align-items: center; margin: 22px 0 0; padding: 12px 16px; border: 1px solid rgba(242,121,59,.3); border-radius: 14px; background: linear-gradient(135deg, #fff6ee, #fffbf7); box-shadow: 0 7px 18px rgba(184,81,34,.055); }
+    .early-bird-icon { width: 38px; height: 38px; display: grid; place-items: center; border-radius: 11px; color: white; background: linear-gradient(135deg, #ef783a, #f1a04d); font-family: "Segoe UI Emoji", "Apple Color Emoji", sans-serif; font-size: 1.05rem; }
+    .early-bird-card strong { display: block; margin-bottom: 3px; color: #a9471e; font-size: 1rem; font-weight: 900; }
+    .early-bird-card p { margin: 0; color: #744932; font-size: .92rem; line-height: 1.55; }
     .early-bird-card em { color: #bd4f20; font-style: normal; font-weight: 900; }
-    .registration-notes h3 { margin: 0 0 14px; color: var(--blue-dark); font-size: 1.08rem; }
+    .early-bird-limit { display: inline-block; margin-left: .35em; color: #8b6a59; font-size: .82em; font-weight: 700; }
+    .registration-notes h3 { margin: 0 0 14px; color: var(--blue-dark); font-size: 1.125rem; font-weight: 900; }
     .registration-facts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
     .registration-fact { min-height: 92px; padding: 16px 17px; border: 1px solid rgba(37,168,168,.2); border-radius: 17px; background: rgba(255,255,255,.78); }
-    .registration-fact span { display: block; margin-bottom: 4px; color: var(--muted); font-size: .78rem; font-weight: 700; }
+    .registration-fact span { display: block; margin-bottom: 4px; color: var(--muted); font-size: .875rem; font-weight: 700; }
     .registration-fact strong { display: block; color: var(--blue-dark); font-size: 1rem; line-height: 1.45; }
     .registration-fact.important { border-color: rgba(242,121,59,.32); background: rgba(255,244,237,.9); }
     .registration-fact.important strong { color: #c95d29; }
-    .registration-details { display: grid; grid-template-columns: 1fr; gap: 12px; margin-top: 12px; }
-    .registration-detail { padding: 17px 18px; border-radius: 17px; background: rgba(255,255,255,.74); border: 1px solid rgba(37,168,168,.17); }
-    .registration-detail h4 { margin: 0 0 8px; color: var(--blue-dark); font-size: .9rem; }
+    .registration-details { display: grid; grid-template-columns: 1fr; gap: 12px; margin: 0 0 22px; }
+    .registration-detail { padding: 18px 20px; border: 1px solid rgba(37,168,168,.4); border-left: 4px solid #1fa7a3; border-radius: 17px; background: linear-gradient(135deg, #e6f8f5, #f8fcfc 72%); box-shadow: 0 9px 24px rgba(8,121,138,.07); }
+    .registration-detail h4 { margin: 0 0 10px; color: var(--blue-dark); font-size: 1.25rem; font-weight: 900; line-height: 1.45; }
     .registration-detail p { color: var(--ink); font-size: .9rem; font-weight: 800; }
-    .credit-list { display: flex; flex-wrap: wrap; gap: 7px; }
-    .credit-list span { padding: 5px 9px; border: 1px solid rgba(37,168,168,.2); border-radius: 999px; color: #246676; background: #f5fcfb; font-size: .72rem; font-weight: 700; }
+    .credit-list { display: flex; flex-wrap: wrap; gap: 9px; }
+    .credit-list span { padding: 7px 12px; border: 1px solid rgba(37,168,168,.32); border-radius: 999px; color: #246676; background: rgba(255,255,255,.9); box-shadow: 0 3px 9px rgba(8,121,138,.035); font-size: .88rem; font-weight: 700; line-height: 1.35; }
     .registration-form-wrap { padding: 0 18px 18px; }
     .registration-form { display: block; width: 100%; border: 0; border-radius: 16px; background: white; }
     .registration-form.conference-form { height: 1886px; }
@@ -672,6 +746,10 @@
       .org-grid { grid-template-columns: 1fr; }
     }
 
+    @media (min-width: 1041px) and (max-width: 1220px) {
+      .brand-cultivation-text { display: none; }
+    }
+
     @media (max-width: 760px) {
       :root { --header-h: 72px; }
       .container { width: min(calc(100% - 28px), var(--max)); }
@@ -681,8 +759,11 @@
       .section { padding: 72px 0; }
       .brand { min-width: 0; gap: 10px; }
       .brand-mark { width: 46px; flex-basis: 46px; border-radius: 13px; }
+      .brand-primary-row { display: grid; gap: 3px; }
       .brand-text strong { font-size: .98rem; }
-      .brand-dept { font-size: .84rem; }
+      .brand-dept, .brand-cultivation-text { font-size: .84rem; }
+      .brand-cultivation { gap: 5px; padding-left: 0; border-left: 0; }
+      .brand-cultivation img { height: 23px; }
       .brand-event { display: none; }
       .hero { min-height: auto; padding-top: calc(var(--header-h) + 55px); background-position: 62% center; }
       .hero-copy { width: 100%; padding: 22px 8px; }
@@ -708,11 +789,15 @@
       .topic-cloud { grid-template-columns: 1fr 1fr; }
       .speaker-grid { grid-template-columns: 1fr; }
       .speaker-grid { gap: 14px; }
-      .speaker-card { display: grid; grid-template-columns: 125px 1fr; }
-      .speaker-portrait { height: 100%; min-height: 205px; aspect-ratio: auto; }
+      .speaker-grid > .speaker-card { display: block !important; grid-template-columns: none; }
+      .speaker-grid > .speaker-card > .speaker-portrait { width: 100%; height: clamp(220px, 68vw, 270px); min-height: 0; aspect-ratio: auto; }
+      .speaker-portrait img.portrait-andrea { object-position: 50% 32%; }
+      .speaker-portrait img.portrait-christopher { object-position: 50% 30%; }
+      .speaker-info { padding: 20px 18px 24px; }
       .initials { width: 76px; height: 76px; font-size: 1.45rem; }
       .photo-note { font-size: .58rem; }
       .agenda-controls { margin-top: -10px; flex-wrap: wrap; }
+      .agenda-poster-notice { align-items: flex-start; flex-direction: column; text-align: left; }
       .agenda-wrap { overflow: visible; border: 0; background: transparent; box-shadow: none; }
       .agenda-table, .agenda-table tbody { display: block; width: 100%; }
       .agenda-table thead { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
@@ -721,6 +806,21 @@
       .agenda-table td:last-child { border-bottom: 0; }
       .agenda-table td::before { content: attr(data-label); color: var(--muted); font-size: .76rem; font-weight: 800; }
       .agenda-table tr.is-hidden { display: none; }
+      .exhibition-intro { align-items: flex-start; flex-direction: column; }
+      .exhibition-time { width: 100%; max-width: none; }
+      .exhibitor-group-head { align-items: flex-start; flex-direction: column; gap: 6px; }
+      .exhibitor-group-head p { text-align: left; }
+      .exhibitor-media::after, .exhibitor-media::before { opacity: 1; transform: none; }
+      .image-lightbox { width: calc(100vw - 16px); max-height: calc(100dvh - 16px); border-radius: 15px; }
+      .image-lightbox-head { min-height: 52px; padding: 8px 8px 8px 15px; }
+      .image-lightbox-title { font-size: .86rem; }
+      .image-lightbox-stage { min-height: 0; height: calc(100dvh - 140px); padding: 18px 48px; }
+      .image-lightbox-stage img { max-height: calc(100dvh - 176px); }
+      .image-lightbox-nav { width: 38px; height: 48px; border-radius: 12px; }
+      .image-lightbox-prev { left: 6px; }
+      .image-lightbox-next { right: 6px; }
+      .image-lightbox-foot { padding: 10px 15px 12px; }
+      .image-lightbox-caption { font-size: .76rem; }
       .poster-guide-grid { grid-template-columns: 1fr; }
       .poster-sheet-wrap { min-height: 250px; }
       .poster-rules-grid { grid-template-columns: 1fr 1fr; }
@@ -737,10 +837,9 @@
       .topic-cloud { grid-template-columns: 1fr; }
       .topic-card { min-height: auto; }
       .support-list { grid-template-columns: 1fr; }
+      .exhibitor-grid { grid-template-columns: 1fr; }
       .poster-rules-grid { grid-template-columns: 1fr; }
-      .speaker-card { grid-template-columns: 105px 1fr; }
-      .speaker-info { padding: 16px 14px; }
-      .speaker-topic { display: none; }
+      .speaker-info { padding: 18px 16px 22px; }
       .registration-facts { grid-template-columns: 1fr; }
       .countdown { gap: 2px; }
       .count-box strong { font-size: 1.25rem; }
@@ -767,9 +866,9 @@
 
   <header class="site-header" id="site-header">
     <div class="container nav-wrap">
-      <a class="brand" href="#home" aria-label="亞東紀念醫院健康管理部，回到首頁">
+      <a class="brand" href="#home" aria-label="亞東紀念醫院健康管理部與健康台灣深耕計畫，回到首頁">
         <span class="brand-mark" aria-hidden="true"><img src="assets/femh-logo.png" alt=""></span>
-        <span class="brand-text"><strong><span>亞東紀念醫院</span><span class="brand-divider">｜</span><span class="brand-dept">健康管理部</span></strong><span class="brand-event">第六屆國際健康管理暨 TPMIC 研究成果發表會 2026</span></span>
+        <span class="brand-text"><span class="brand-primary-row"><strong><span>亞東紀念醫院</span><span class="brand-divider">｜</span><span class="brand-dept">健康管理部</span></strong><span class="brand-cultivation"><img src="assets/femh-health-taiwan-cultivation-mark.png" alt=""><span class="brand-cultivation-text">健康台灣深耕計畫</span></span></span><span class="brand-event">第六屆國際健康管理 暨 TPMIC 研究成果發表會 2026</span></span>
       </a>
       <button class="menu-toggle" type="button" aria-label="開啟導覽選單" aria-expanded="false" aria-controls="nav-links"><span></span></button>
       <ul class="nav-links" id="nav-links">
@@ -777,6 +876,7 @@
         <li><a href="#speakers">講者</a></li>
         <li><a href="#agenda">議程</a></li>
         <li><a href="#posters">摘要投稿</a></li>
+        <li><a href="#exhibition">交流專區</a></li>
         <li><a href="#centers">服務中心</a></li>
         <li><a href="#venue">交通</a></li>
         <li><a class="nav-cta" href="#registration">立即報名</a></li>
@@ -794,6 +894,7 @@
             <p class="conference-name">第六屆國際健康管理暨 TPMIC 研究成果發表會</p>
             <p class="hero-subtitle en">The 6th International Conference on Health Management &amp; TPMIC Research Symposium</p>
           </div>
+          <div class="hero-poster-highlight">全日活動｜研究海報展同步展出</div>
           <div class="hero-actions">
             <!-- TODO: 待主辦單位提供正式報名網址 -->
             <a class="btn primary" href="#registration" aria-label="前往線上報名表單">立即報名 <span aria-hidden="true">→</span></a>
@@ -810,7 +911,7 @@
         <div class="event-panel reveal">
           <div class="event-summary">
             <div class="calendar-icon" aria-hidden="true">14</div>
-            <div><strong>2026 年 11 月 14 日（星期六）</strong><span>亞東紀念醫院 · Far Eastern Memorial Hospital</span><span class="early-bird-chip">8:50 前完成簽到｜前 50 名贈 100 元餐券</span></div>
+            <div><strong>2026 年 11 月 14 日（星期六）</strong><span>亞東紀念醫院 · Far Eastern Memorial Hospital</span><span class="early-bird-chip">8:50 前完成簽到｜前 100 名贈 100 元餐券</span></div>
           </div>
           <div class="countdown" aria-label="距離活動開始倒數" aria-live="polite">
             <div class="count-box"><strong id="days">--</strong><span>天 DAYS</span></div>
@@ -851,6 +952,22 @@
             <a class="speaker-portrait" href="https://time.com/collection/longevity-leaders/2026/andrea-maier/" target="_blank" rel="noopener noreferrer" aria-label="開啟 Andrea Britta Maier 的 TIME Longevity Leaders 2026 專頁"><img class="portrait-andrea" src="講者資訊/Photo_Andrea%20Maier_web.jpg" alt="Andrea Britta Maier 教授大頭照" loading="eager" decoding="async"></a>
             <div class="speaker-info"><h3>Andrea Britta Maier <span class="speaker-credentials en">MD, PhD, FRACP</span></h3><p>Co-Founder and Director, NUS Academy for Healthy Longevity<br>Oon Chiew Seng Professor in Medicine, National University of Singapore<br>Professor of Gerontology, Vrije Universiteit Amsterdam</p><div class="speaker-topic">Precision Geromedicine, the Model to Keep Health in Care.</div><details class="speaker-bio"><summary>講者簡介｜Biography</summary><p>Andrea Britta Maier 教授現任新加坡國立大學健康長壽學院共同創辦人暨院長、Oon Chiew Seng 醫學講座教授、荷蘭阿姆斯特丹自由大學老年學教授，以及澳洲墨爾本大學醫學與老年照護榮譽教授。</p><p class="en">Professor Andrea Britta Maier is Co-Founder and Director of the NUS Academy for Healthy Longevity, Oon Chiew Seng Professor in Medicine at the National University of Singapore, Professor of Gerontology at Vrije Universiteit Amsterdam, and Honorary Professor of Medicine and Aged Care at the University of Melbourne.</p><div class="speaker-bio-label">學經歷｜Education &amp; Experience</div><p>2003年取得德國呂北克大學醫學學位，2008年獲荷蘭萊頓大學醫學中心博士學位，2009年取得荷蘭老年醫學專科資格；2016至2021年間曾任 Royal Melbourne Hospital 部門主任及墨爾本大學教授。</p><p class="en">She received her medical degree from the University of Lübeck in 2003 and her Ph.D. from Leiden University Medical Center in 2008, and qualified as a geriatrician in the Netherlands in 2009. From 2016 to 2021, she held leadership and professorial roles at the Royal Melbourne Hospital and the University of Melbourne.</p><div class="speaker-bio-label">研究領域｜Research Interests</div><p>研究聚焦精準老年醫學、肌少症、細胞老化、健康壽命延展及老化科學臨床試驗，致力將老化生物學轉譯為個人化、生物標記導向的臨床介入策略。</p><p class="en">Her research focuses on precision geromedicine, sarcopenia, cellular senescence, healthspan extension, and geroscience clinical trials, translating ageing biology into personalized, biomarker-guided interventions.</p><div class="speaker-bio-label">專業經歷與成果｜Professional Experience &amp; Achievements</div><p>現任健康長壽醫學會創會會長，2022年共同創辦 Chi Longevity；深耕老化科學逾25年，已發表逾500篇同儕審查論文，並參與WHO「聯合國健康老化十年」相關評估工作。2026年入選《TIME》「Longevity Leaders 2026」，為全球12位獲選代表人物之一。</p><p class="en">She is Founding President of the Healthy Longevity Medicine Society and co-founded Chi Longevity in 2022. With more than 25 years in ageing research and over 500 peer-reviewed publications, she has contributed to WHO-related work for the UN Decade of Healthy Ageing. In 2026, she was named one of the 12 TIME Longevity Leaders.</p></details><a class="speaker-external-link en" href="https://time.com/collection/longevity-leaders/2026/andrea-maier/" target="_blank" rel="noopener noreferrer" aria-label="前往 Andrea Britta Maier 的 TIME Longevity Leaders 2026 專頁">TIME Longevity Leaders 2026 <span aria-hidden="true">↗</span></a></div>
           </article>
+          <article class="speaker-card reveal" data-speaker-id="kuanming">
+            <div class="speaker-portrait"><img class="portrait-kuanming" src="講者資訊/邱冠明%20院長.jpg" alt="邱冠明院長大頭照" loading="eager" decoding="async"></div>
+            <div class="speaker-info"><h3>邱冠明 院長</h3><p>Superintendent, Far Eastern Memorial Hospital<br>Professor, Ministry of Education–Certified<br>Advisor, Healthy Taiwan Promotion Committee, Office of the President</p><div class="speaker-topic">Opening Address</div><details class="speaker-bio"><summary>院長簡介｜Superintendent’s Profile</summary>
+<p>邱冠明院長現任亞東紀念醫院院長、教育部部定教授及總統府健康台灣推動委員會顧問，專精心臟血管外科與微創心臟手術。</p>
+<p class="en">Dr. Kuan-Ming Chiu is Superintendent of Far Eastern Memorial Hospital, a professor certified by Taiwan’s Ministry of Education, and an advisor to the Healthy Taiwan Promotion Committee at the Office of the President. He specializes in cardiovascular surgery and minimally invasive cardiac surgery.</p>
+<div class="speaker-bio-label">學經歷｜Education &amp; Experience</div>
+<p>取得國立臺灣大學醫學士、臨床醫學研究所博士及管理學院 EMBA 學位；曾任臺大醫院心臟血管外科總醫師、亞東紀念醫院血管醫學中心部主任及醫療副院長。</p>
+<p class="en">He earned his M.D., Ph.D. in Clinical Medicine, and EMBA from National Taiwan University. He previously served as Chief Resident in Cardiovascular Surgery at National Taiwan University Hospital, Director of the Vascular Medicine Center, and Vice Superintendent for Medical Affairs at Far Eastern Memorial Hospital.</p>
+<div class="speaker-bio-label">專業領域｜Clinical Expertise</div>
+<p>專長涵蓋微創心臟手術、心臟瓣膜手術及冠狀動脈繞道手術。</p>
+<p class="en">His clinical expertise includes minimally invasive cardiac surgery, heart valve surgery, and coronary artery bypass grafting.</p>
+<div class="speaker-bio-label">專業經歷與成果｜Professional Experience &amp; Achievements</div>
+<p>具中華民國心臟學會理事、台灣醫學中心協會常務理事及台灣醫院協會監事主席等專業經歷。已執行逾 7,600 例心臟手術及逾 3,000 例微創心臟手術，微創瓣膜手術佔比超過九成。</p>
+<p class="en">Dr. Chiu’s professional experience includes serving as a board member of the Taiwan Society of Cardiology, an executive board member of the Taiwan Association of Medical Centers, and chair of the board of supervisors of the Taiwan Hospital Association. He has performed more than 7,600 cardiac operations and over 3,000 minimally invasive cardiac procedures, with minimally invasive approaches accounting for more than 90% of his valve operations.</p>
+</details></div>
+          </article>
           <article class="speaker-card reveal" data-speaker-id="christopher">
             <div class="speaker-portrait"><img class="portrait-christopher" src="講者資訊/Photo_Christopher%20Chen_web.jpg" alt="Christopher Chen 教授大頭照" loading="eager" decoding="async"></div>
             <div class="speaker-info"><h3>Christopher Chen <span class="speaker-credentials en">BM BCh, FAMS (Neurology), FRCP (Edin)</span></h3><p>Director, Memory Aging &amp; Cognition Centre, National University Health System<br>Professor, Department of Pharmacology, Yong Loo Lin School of Medicine, National University of Singapore<br>Senior Consultant Neurologist, National University Hospital</p><div class="speaker-topic">Improving Brain Health by Dementia Prevention</div><details class="speaker-bio"><summary>講者簡介｜Biography</summary><p>Christopher Chen 教授現任新加坡國立大學醫療體系記憶老化與認知中心主任、新加坡國立大學楊潞齡醫學院藥理學系教授，並為新加坡國立大學醫院內科部資深顧問醫師（神經科專科）。</p><p class="en">Professor Christopher Chen is Director of the Memory Aging &amp; Cognition Centre at the National University Health System, Professor of Pharmacology at the NUS Yong Loo Lin School of Medicine, and Senior Consultant Neurologist at the National University Hospital.</p><div class="speaker-bio-label">學經歷｜Education &amp; Experience</div><p>1982年取得英國劍橋大學自然科學學士，1985年獲牛津大學臨床醫學學位；其後取得英國皇家內科醫學院會員資格，並獲新加坡醫學科學院神經科專科院士及愛丁堡皇家內科醫學院院士資格。</p><p class="en">He earned a degree in Natural Sciences from the University of Cambridge in 1982 and his BM BCh from the University of Oxford in 1985. He later obtained MRCP, FAMS in Neurology, and Fellowship of the Royal College of Physicians of Edinburgh.</p><div class="speaker-bio-label">研究領域｜Research Interests</div><p>研究聚焦血管性認知障礙、腦小血管疾病、失智症預防與早期偵測、腦中風後認知追蹤，以及神經影像、血液與視網膜等多模態生物標記整合。</p><p class="en">His research focuses on vascular cognitive impairment, cerebral small vessel disease, dementia prevention and early detection, post-stroke cognition, and multimodal imaging, blood, and retinal biomarkers.</p><div class="speaker-bio-label">專業經歷與成果｜Professional Experience &amp; Achievements</div><p>長期參與國際失智症、腦中風與腦健康研究合作，擔任多本國際期刊編輯委員，並持續獲新加坡國家醫學研究委員會大型研究獎助。迄今已發表逾500篇學術論文及書籍專章，積極投入研究人才培育。</p><p class="en">He contributes to international research and professional initiatives in dementia, stroke, and brain health, serves on the editorial boards of leading journals, and has received major competitive awards from Singapore’s National Medical Research Council. He has published more than 500 papers and book chapters and actively mentors research trainees.</p></details></div>
@@ -879,6 +996,10 @@
             <div class="speaker-portrait"><img class="portrait-tsai" src="講者資訊/Photo_奇美醫院預防醫學及健檢中心蔡孟修主任.jpg.jpg?v=20260915" alt="蔡孟修主任大頭照" loading="lazy" decoding="async"></div>
             <div class="speaker-info"><h3>蔡孟修 主任</h3><p>Director, Division of Preventive Medicine, Chi-Mei Medical Center<br>Secretary-General, Taiwan Lifestyle Medicine Society</p><div class="speaker-topic">From Lifestyle Medicine to Longevity Medicine</div><details class="speaker-bio"><summary>講者簡介｜Biography</summary><p>蔡孟修主任現任奇美醫院預防醫學科主任及健康管理中心主任，並於家庭醫學部與老年醫學科擔任相關臨床職務，同時擔任臺灣生活型態醫學會秘書長。</p><p class="en">Dr. Ming-Hsiu Tsai currently serves as Director of the Division of Preventive Medicine and Director of the Health Management Center at Chi Mei Hospital. He also holds clinical appointments in family medicine and geriatric medicine and serves as Secretary-General of the Taiwan Lifestyle Medicine Society.</p><div class="speaker-bio-label">學經歷｜Education &amp; Experience</div><ul><li>高雄醫學大學醫學系｜School of Medicine, Kaohsiung Medical University</li><li>家庭醫學、老年醫學、安寧緩和醫學及醫院整合醫學專業訓練｜Professional training in family medicine, geriatric medicine, hospice and palliative medicine, and integrated hospital medicine</li></ul><div class="speaker-bio-label">研究領域｜Research Interests</div><p>專注慢性病預防、健康促進、整合照護及生活型態醫學的臨床應用。</p><p class="en">His interests include chronic disease prevention, health promotion, integrated care, and clinical applications of lifestyle medicine.</p><div class="speaker-bio-label">專業經歷與成果｜Professional Experience &amp; Achievements</div><p>擔任臺灣生活型態醫學會秘書長，並具美國生活型態醫學會國際專科認證。</p><p class="en">Dr. Tsai serves as Secretary-General of the Taiwan Lifestyle Medicine Society and holds international specialist certification from the American College of Lifestyle Medicine.</p></details></div>
           </article>
+          <article class="speaker-card reveal" data-speaker-id="liu">
+            <div class="speaker-portrait"><img class="portrait-liu" src="講者資訊/photo_劉明承主任.png" alt="劉明承主任大頭照" loading="lazy" decoding="async"></div>
+            <div class="speaker-info"><h3>劉明承 主任</h3><p>臺中榮民總醫院影像醫學部心肺影像診療科主任<br><span class="en">Director, Division of Cardiopulmonary Radiology, Department of Medical Imaging, Taichung Veterans General Hospital</span></p><div class="speaker-topic">Clinical Applications of Photon-Counting CT in Cardiovascular Disease and Health Check Screening</div><details class="speaker-bio"><summary>講者簡介｜Biography</summary><p>劉明承醫師長期投入胸腔、心血管與乳房影像診斷，以及影像導引診療技術的臨床應用與研究。</p><p class="en">Dr. Ming-Cheng Liu has long been dedicated to the clinical application and research of chest, cardiovascular, and breast imaging, as well as image-guided diagnostic and interventional techniques.</p><div class="speaker-bio-label">學經歷｜Education &amp; Experience</div><p>現任臺中榮民總醫院影像醫學部心肺影像診療科主任。畢業於高雄醫學大學醫學系，具醫務工程與管理碩士及電機與通訊工程博士學位，專長橫跨臨床醫學、醫務管理與工程科技。</p><p class="en">He currently serves as Director of the Division of Cardiopulmonary Radiology at Taichung Veterans General Hospital. He graduated from the School of Medicine, Kaohsiung Medical University, and holds a master’s degree in health administration and a Ph.D. in electrical and communications engineering, with interdisciplinary expertise spanning clinical medicine, healthcare management, and engineering technology.</p><div class="speaker-bio-label">研究領域｜Research Interests</div><p>專精於胸腔、心血管及乳房影像診斷，並擅長肺部腫瘤冷凍治療、超音波與 3D 乳房斷層攝影導引切片等影像導引技術，涵蓋早期篩檢、精準診斷與微創治療。</p><p class="en">He specializes in chest, cardiovascular, and breast imaging, with expertise in image-guided techniques including lung tumor cryoablation, ultrasound-guided biopsy, and 3D tomosynthesis-guided breast biopsy, covering early screening, precise diagnosis, and minimally invasive treatment.</p><div class="speaker-bio-label">專業經歷與成果｜Professional Experience &amp; Achievements</div><p>致力於 AI 與醫學影像於疾病早期偵測的臨床應用，並推動 LDCT 心肺雙篩技術。現參與國健署乳癌、肺癌篩檢計畫及中華民國放射線醫學會相關委員會，持續推動影像品質與臨床診療創新。</p><p class="en">He is dedicated to the clinical application of AI and medical imaging for early disease detection and to advancing LDCT-based cardiopulmonary screening. He participates in Taiwan’s national breast and lung cancer screening programs and serves on relevant committees of the Radiological Society of the Republic of China, continuing to promote innovation in imaging quality and clinical practice.</p></details></div>
+          </article>
           <article class="speaker-card reveal" data-speaker-id="lin">
             <div class="speaker-portrait"><img class="portrait-lin" src="講者資訊/Photo_林靜嫻教授.png?v=20260922" alt="林靜嫻教授大頭照" loading="lazy" decoding="async"></div>
             <div class="speaker-info"><h3>林靜嫻 教授</h3><p>Professor, Department of Neurology, National Taiwan University Hospital<br>Director, Clinical Center for Neuroscience and Behavior, NTUH</p><div class="speaker-topic">Unraveling the Genetic Landscape of Parkinson’s Disease and Dementia Progression</div><details class="speaker-bio"><summary>講者簡介｜Biography</summary><p>林靜嫻教授結合臨床與基礎研究，致力於巴金森氏症等神經退化疾病的早期診斷與治療研究。</p><p class="en">Professor Chin-Hsien Lin integrates clinical and basic research to advance early diagnosis and treatment of neurodegenerative diseases, including Parkinson disease.</p><div class="speaker-bio-label">學經歷｜Education &amp; Experience</div><p>現任臺大醫院神經部教授、臨床神經暨行為醫學中心主任及醫學研究部副主任，並任國立臺灣大學醫學院多所合聘教授。</p><p class="en">She is Professor of Neurology at National Taiwan University Hospital, Director of its Clinical Center for Neuroscience and Behavior, and Deputy Director of the Department of Medical Research.</p><div class="speaker-bio-label">研究領域｜Research Interests</div><p>研究聚焦遺傳性巴金森氏症、神經基因、生物標記、腸腦軸及動物模型，結合基礎研究與臨床世代資料，推動早期診斷與疾病修飾治療。</p><p class="en">Her research focuses on Parkinson’s disease genetics, biomarkers, the gut–brain axis, and disease models, integrating basic science with longitudinal clinical cohorts.</p><div class="speaker-bio-label">專業經歷與成果｜Professional Experience &amp; Achievements</div><p>曾任臺灣動作障礙學會理事長，並參與國際巴金森暨動作障礙學會多項委員會；曾獲科技部傑出研究獎及國家新創獎等肯定。</p></details></div>
@@ -899,13 +1020,14 @@
           <button class="filter-btn" type="button" data-filter="am">上午場</button>
           <button class="filter-btn" type="button" data-filter="pm">下午場</button>
         </div>
+        <div class="agenda-poster-notice reveal">研究海報展於活動當日全時段開放參觀，歡迎於報到、休息及交流時段前往觀展。</div>
         <div class="agenda-wrap reveal">
           <table class="agenda-table">
             <caption style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">2026年國際健康管理暨TPMIC研究成果發表會完整議程</caption>
             <thead><tr><th>Time<br><span class="agenda-head-zh">時間</span></th><th>Session<br><span class="agenda-head-zh">場次</span></th><th>Topic<br><span class="agenda-head-zh">主題</span></th><th>Speaker &amp; Affiliation<br><span class="agenda-head-zh">講者／服務單位</span></th><th>Moderator<br><span class="agenda-head-zh">主持人</span></th></tr></thead>
             <tbody>
               <tr class="opening-row" data-period="am"><td data-label="時間"><span class="agenda-time">08:30–09:00</span></td><td data-label="場次"><span class="badge opening">報到</span><span class="agenda-sub">Registration</span></td><td data-label="主題">—</td><td data-label="講者／服務單位">—</td><td data-label="主持人">—</td></tr>
-              <tr class="opening-row" data-period="am"><td data-label="時間"><span class="agenda-time">09:00–09:10</span></td><td data-label="場次"><span class="badge opening">致詞</span><span class="agenda-sub">Opening Remarks</span></td><td data-label="主題"><span class="agenda-org">亞東紀念醫院</span><strong class="agenda-person">邱冠明 院長</strong><span class="agenda-role">Far Eastern Memorial Hospital<br>Superintendent</span><strong class="agenda-person en">Kuan-Ming Chiu</strong></td><td data-label="講者／服務單位">—</td><td data-label="主持人"><strong>主持人</strong><span class="agenda-sub">Host</span></td></tr>
+              <tr class="opening-row" data-period="am"><td data-label="時間"><span class="agenda-time">09:00–09:10</span></td><td data-label="場次"><span class="badge opening">致詞</span><span class="agenda-sub">Opening Remarks</span></td><td data-label="主題"><span class="agenda-title">大會開幕致詞</span><span class="agenda-sub en">Opening Address</span></td><td data-label="講者／服務單位"><strong class="agenda-person">邱冠明 院長</strong><strong class="agenda-person en agenda-speaker-name-en">Kuan-Ming Chiu</strong><span class="agenda-org agenda-speaker-unit">亞東紀念醫院</span><span class="agenda-role">Superintendent, Far Eastern Memorial Hospital</span><button class="speaker-info-trigger" type="button" data-speaker-id="kuanming" aria-haspopup="dialog" aria-label="查看 邱冠明 講者資訊"><span aria-hidden="true">ⓘ</span> 講者資訊</button></td><td data-label="主持人"><strong>主持人</strong><span class="agenda-sub">Host</span></td></tr>
               <tr data-period="am"><td data-label="時間"><span class="agenda-time">09:10–09:50</span></td><td data-label="場次"><span class="badge keynote">Keynote Speech I</span></td><td data-label="主題"><span class="agenda-title">Precision Geromedicine, the Model to Keep Health in Care.</span></td><td data-label="講者／服務單位"><strong class="agenda-person en agenda-speaker-name-en">Professor Andrea Britta Maier</strong><span class="agenda-org agenda-speaker-unit">NUS Academy for Healthy Longevity<br>National University of Singapore</span><button class="speaker-info-trigger" type="button" data-speaker-id="andrea" aria-haspopup="dialog" aria-label="查看 Andrea Britta Maier 講者資訊"><span aria-hidden="true">ⓘ</span> 講者資訊</button></td><td data-label="主持人"><strong class="agenda-person">邱彥霖 部長</strong><strong class="agenda-person en agenda-speaker-name-en">Dr. Yen-Ling Chiu</strong><span class="agenda-org agenda-speaker-unit">亞東紀念醫院健康管理部</span><span class="agenda-role">Director, Department of Health Management<br>Far Eastern Memorial Hospital</span></td></tr>
               <tr data-period="am"><td data-label="時間"><span class="agenda-time">09:50–10:30</span></td><td data-label="場次"><span class="badge keynote">Keynote Speech II</span></td><td data-label="主題"><span class="agenda-title">Improving Brain Health by Dementia Prevention: How Recent Dementia Research Will Impact Health Management</span></td><td data-label="講者／服務單位"><strong class="agenda-person en agenda-speaker-name-en">Professor Christopher Chen</strong><span class="agenda-org agenda-speaker-unit">National University of Singapore</span><button class="speaker-info-trigger" type="button" data-speaker-id="christopher" aria-haspopup="dialog" aria-label="查看 Christopher Chen 講者資訊"><span aria-hidden="true">ⓘ</span> 講者資訊</button></td><td data-label="主持人"><strong class="agenda-person">徐榮隆 理事長</strong><strong class="agenda-person en agenda-speaker-name-en">Dr. Jung Lung Hsu</strong><span class="agenda-org agenda-speaker-unit">台灣臨床失智症學會</span><span class="agenda-role">President, Taiwan Dementia Society</span></td></tr>
               <tr class="break-row" data-period="am"><td data-label="時間"><span class="agenda-time">10:30–11:00</span></td><td data-label="場次"><span class="badge break">Coffee Break</span></td><td data-label="主題">—</td><td data-label="講者／服務單位">—</td><td data-label="主持人">—</td></tr>
@@ -913,12 +1035,12 @@
               <tr data-period="am"><td data-label="時間"><span class="agenda-time">11:10–11:50</span></td><td data-label="場次"><span class="badge symposium">Symposium I</span></td><td data-label="主題"><span class="agenda-title">From Lifestyle Medicine to Longevity Medicine: A Clinical Approach to Extending Healthspan</span></td><td data-label="講者／服務單位"><strong class="agenda-person">蔡孟修 主任</strong><strong class="agenda-person en agenda-speaker-name-en">Dr. Ming-Hsiu Tsai</strong><span class="agenda-org agenda-speaker-unit">奇美醫院預防醫學科</span><span class="agenda-role">Director, Division of Preventive Medicine, Chi-Mei Medical Center</span><button class="speaker-info-trigger" type="button" data-speaker-id="tsai" aria-haspopup="dialog" aria-label="查看 蔡孟修 講者資訊"><span aria-hidden="true">ⓘ</span> 講者資訊</button></td><td data-label="主持人"><strong class="agenda-person">李愛先 主任</strong><strong class="agenda-person en agenda-speaker-name-en">Dr. Ai-Hsien Li</strong><span class="agenda-org agenda-speaker-unit">亞東紀念醫院健康管理中心</span><span class="agenda-role">Director, Health Management Center, Far Eastern Memorial Hospital</span></td></tr>
               <tr class="break-row" data-period="am"><td data-label="時間"><span class="agenda-time">12:00–13:10</span></td><td data-label="場次"><span class="badge break">Lunch Break</span></td><td data-label="主題">—</td><td data-label="講者／服務單位">—</td><td data-label="主持人">—</td></tr>
               <tr data-period="pm"><td data-label="時間"><span class="agenda-time">13:10–13:50</span></td><td data-label="場次"><span class="badge keynote">Keynote Speech III</span></td><td data-label="主題"><span class="agenda-title">AD-Care Plan and Brain Health Care</span></td><td data-label="講者／服務單位"><strong class="agenda-person en agenda-speaker-name-en">Professor SangYun Kim</strong><span class="agenda-org agenda-speaker-unit">Seoul National University</span><button class="speaker-info-trigger" type="button" data-speaker-id="sangyun" aria-haspopup="dialog" aria-label="查看 SangYun Kim 講者資訊"><span aria-hidden="true">ⓘ</span> 講者資訊</button></td><td data-label="主持人"><strong class="agenda-person">白明奇 教授</strong><strong class="agenda-person en agenda-speaker-name-en">Professor Ming-Chyi Pai</strong><span class="agenda-org agenda-speaker-unit">國立成功大學醫學院神經學科教授、<br>成大醫院失智症中心主任</span><span class="agenda-role">Department of Neurology, College of Medicine, National Cheng Kung University<br>Director, Dementia Center, National Cheng Kung University Hospital</span></td></tr>
-              <tr data-period="pm"><td data-label="時間"><span class="agenda-time">13:50–14:30</span></td><td data-label="場次"><span class="badge symposium">Symposium III</span></td><td data-label="主題"><span class="badge tbd">TBD</span></td><td data-label="講者／服務單位"><strong class="agenda-person">劉明承 主任</strong><strong class="agenda-person en agenda-speaker-name-en">Dr. Ming-Cheng Liu</strong><span class="agenda-org agenda-speaker-unit">臺中榮總影像醫學部呼吸循環放射科</span><span class="agenda-role">Director, Division of Thoracic and Cardiovascular Radiology, Department of Medical Imaging, Taichung Veterans General Hospital</span></td><td data-label="主持人"><strong class="agenda-person">賴彥君 主任</strong><strong class="agenda-person en agenda-speaker-name-en">Dr. Yen-Jun Lai</strong><span class="agenda-org agenda-speaker-unit">亞東紀念醫院影像醫學科</span><span class="agenda-role">Department Chair, Department of Medical Imaging, Far Eastern Memorial Hospital</span></td></tr>
+              <tr data-period="pm"><td data-label="時間"><span class="agenda-time">13:50–14:30</span></td><td data-label="場次"><span class="badge symposium">Symposium III</span></td><td data-label="主題"><span class="agenda-title">Clinical Applications of Photon-Counting CT in Cardiovascular Disease and Health Check Screening</span></td><td data-label="講者／服務單位"><strong class="agenda-person">劉明承 主任</strong><strong class="agenda-person en agenda-speaker-name-en">Dr. Ming-Cheng Liu</strong><span class="agenda-org agenda-speaker-unit">臺中榮民總醫院影像醫學部心肺影像診療科</span><span class="agenda-role">Director, Division of Cardiopulmonary Radiology, Department of Medical Imaging, Taichung Veterans General Hospital</span><button class="speaker-info-trigger" type="button" data-speaker-id="liu" aria-haspopup="dialog" aria-label="查看 劉明承 講者資訊"><span aria-hidden="true">ⓘ</span> 講者資訊</button></td><td data-label="主持人"><strong class="agenda-person">賴彥君 主任</strong><strong class="agenda-person en agenda-speaker-name-en">Dr. Yen-Jun Lai</strong><span class="agenda-org agenda-speaker-unit">亞東紀念醫院影像醫學科</span><span class="agenda-role">Department Chair, Department of Medical Imaging, Far Eastern Memorial Hospital</span></td></tr>
               <tr class="break-row" data-period="pm"><td data-label="時間"><span class="agenda-time">14:30–15:00</span></td><td data-label="場次"><span class="badge break">Coffee Break</span></td><td data-label="主題">—</td><td data-label="講者／服務單位">—</td><td data-label="主持人">—</td></tr>
               <tr class="short-row" data-period="pm"><td data-label="時間"><span class="agenda-time">15:00–15:15</span></td><td data-label="場次"><span class="badge short">TPMIC Short Talk 1</span></td><td data-label="主題"><span class="agenda-title">Unraveling the Genetic Landscape of Parkinson’s Disease and Dementia Progression</span></td><td data-label="講者／服務單位"><strong class="agenda-person">林靜嫻 教授</strong><strong class="agenda-person en agenda-speaker-name-en">Professor Chin-Hsien Lin</strong><span class="agenda-org agenda-speaker-unit">臺灣大學醫學系暨醫學工程學系</span><span class="agenda-role">Professor, National Taiwan University, Department of Medicine &amp; Department of Biomedical Engineering</span><button class="speaker-info-trigger" type="button" data-speaker-id="lin" aria-haspopup="dialog" aria-label="查看 林靜嫻 講者資訊"><span aria-hidden="true">ⓘ</span> 講者資訊</button></td><td data-label="主持人"><strong class="agenda-person">莊宜芳 教授</strong><strong class="agenda-person en agenda-speaker-name-en">Professor Yi-Fang Chuang</strong><span class="agenda-org agenda-speaker-unit">國立陽明交通大學公共衛生研究所</span><span class="agenda-role">Institute of Public Health, National Yang Ming Chiao Tung University</span></td></tr>
-              <tr class="short-row" data-period="pm"><td data-label="時間"><span class="agenda-time">15:15–15:30</span></td><td data-label="場次"><span class="badge short">TPMIC Short Talk 2</span></td><td data-label="主題"><span class="agenda-title">A Multimodal Exploration of Brain Structural Signatures and Blood-Based Biomarkers in Cognitive Declines</span></td><td data-label="講者／服務單位"><strong class="agenda-person">石曜嘉 助理教授</strong><strong class="agenda-person en agenda-speaker-name-en">Dr. Yao-Chia Shih</strong><span class="agenda-org agenda-speaker-unit">元智大學醫學研究所</span><span class="agenda-role">Graduate Institute of Medicine, Yuan Ze University</span><button class="speaker-info-trigger" type="button" data-speaker-id="shih" aria-haspopup="dialog" aria-label="查看 石曜嘉 講者資訊"><span aria-hidden="true">ⓘ</span> 講者資訊</button></td><td data-label="主持人"><strong class="agenda-person">莊宜芳 教授</strong><strong class="agenda-person en agenda-speaker-name-en">Professor Yi-Fang Chuang</strong><span class="agenda-org agenda-speaker-unit">國立陽明交通大學公共衛生研究所</span><span class="agenda-role">Institute of Public Health, National Yang Ming Chiao Tung University</span></td></tr>
-              <tr class="short-row" data-period="pm"><td data-label="時間"><span class="agenda-time">15:30–15:45</span></td><td data-label="場次"><span class="badge short">TPMIC Short Talk 3</span></td><td data-label="主題"><span class="agenda-title">Multi-Domain Physical Fitness and Dementia Risk: Insights from a Nationwide Cohort Study</span></td><td data-label="講者／服務單位"><strong class="agenda-person">林辰樺 博士研究員</strong><strong class="agenda-person en agenda-speaker-name-en">Dr. Chen-Hua Lin</strong><span class="agenda-org agenda-speaker-unit">陽明交通大學公共衛生研究所</span><span class="agenda-role">Institute of Public Health, National Yang Ming Chiao Tung University</span></td><td data-label="主持人"><strong class="agenda-person">莊宜芳 教授</strong><strong class="agenda-person en agenda-speaker-name-en">Professor Yi-Fang Chuang</strong><span class="agenda-org agenda-speaker-unit">國立陽明交通大學公共衛生研究所</span><span class="agenda-role">Institute of Public Health, National Yang Ming Chiao Tung University</span></td></tr>
-              <tr class="short-row" data-period="pm"><td data-label="時間"><span class="agenda-time">15:45–16:00</span></td><td data-label="場次"><span class="badge short">TPMIC Short Talk 4</span></td><td data-label="主題"><span class="badge tbd">TBD</span></td><td data-label="講者／服務單位"><span class="badge tbd">TBD</span></td><td data-label="主持人"><strong class="agenda-person">莊宜芳 教授</strong><strong class="agenda-person en agenda-speaker-name-en">Professor Yi-Fang Chuang</strong><span class="agenda-org agenda-speaker-unit">國立陽明交通大學公共衛生研究所</span><span class="agenda-role">Institute of Public Health, National Yang Ming Chiao Tung University</span></td></tr>
+              <tr class="short-row" data-period="pm"><td data-label="時間"><span class="agenda-time">15:15–15:30</span></td><td data-label="場次"><span class="badge short">TPMIC Short Talk 2</span></td><td data-label="主題"><span class="agenda-title">Multi-Domain Physical Fitness and Dementia Risk: Insights from a Nationwide Cohort Study</span></td><td data-label="講者／服務單位"><strong class="agenda-person">林辰樺 博士研究員</strong><strong class="agenda-person en agenda-speaker-name-en">Dr. Chen-Hua Lin</strong><span class="agenda-org agenda-speaker-unit">陽明交通大學公共衛生研究所</span><span class="agenda-role">Institute of Public Health, National Yang Ming Chiao Tung University</span></td><td data-label="主持人"><strong class="agenda-person">莊宜芳 教授</strong><strong class="agenda-person en agenda-speaker-name-en">Professor Yi-Fang Chuang</strong><span class="agenda-org agenda-speaker-unit">國立陽明交通大學公共衛生研究所</span><span class="agenda-role">Institute of Public Health, National Yang Ming Chiao Tung University</span></td></tr>
+              <tr class="short-row" data-period="pm"><td data-label="時間"><span class="agenda-time">15:30–15:45</span></td><td data-label="場次"><span class="badge short">TPMIC Short Talk 3</span></td><td data-label="主題"><span class="agenda-title">A Multimodal Exploration of Brain Structural Signatures and Blood-Based Biomarkers in Cognitive Declines</span></td><td data-label="講者／服務單位"><strong class="agenda-person">石曜嘉 助理教授</strong><strong class="agenda-person en agenda-speaker-name-en">Dr. Yao-Chia Shih</strong><span class="agenda-org agenda-speaker-unit">元智大學醫學研究所</span><span class="agenda-role">Graduate Institute of Medicine, Yuan Ze University</span><button class="speaker-info-trigger" type="button" data-speaker-id="shih" aria-haspopup="dialog" aria-label="查看 石曜嘉 講者資訊"><span aria-hidden="true">ⓘ</span> 講者資訊</button></td><td data-label="主持人"><strong class="agenda-person">趙一平 副教授</strong><strong class="agenda-person en agenda-speaker-name-en">Associate Professor Yi-Ping Chao</strong><span class="agenda-org agenda-speaker-unit">長庚大學資訊工程學系</span><span class="agenda-role">Department of Computer Science and Information Engineering, Chang Gung University</span></td></tr>
+              <tr class="short-row" data-period="pm"><td data-label="時間"><span class="agenda-time">15:45–16:00</span></td><td data-label="場次"><span class="badge short">TPMIC Short Talk 4</span></td><td data-label="主題"><span class="badge tbd">TBD</span></td><td data-label="講者／服務單位"><span class="badge tbd">TBD</span></td><td data-label="主持人"><strong class="agenda-person">趙一平 副教授</strong><strong class="agenda-person en agenda-speaker-name-en">Associate Professor Yi-Ping Chao</strong><span class="agenda-org agenda-speaker-unit">長庚大學資訊工程學系</span><span class="agenda-role">Department of Computer Science and Information Engineering, Chang Gung University</span></td></tr>
               <tr class="opening-row" data-period="pm"><td data-label="時間"><span class="agenda-time">16:00–16:10</span></td><td data-label="場次"><span class="badge opening">Closing Remarks</span></td><td data-label="主題"><span class="badge tbd">TBD</span></td><td data-label="講者／服務單位"><span class="badge tbd">TBD</span></td><td data-label="主持人">—</td></tr>
             </tbody>
           </table>
@@ -959,7 +1081,7 @@
         <aside class="poster-rules reveal" aria-labelledby="poster-rules-title">
           <h3 id="poster-rules-title">研究期刊投稿與錄取後展示須知</h3>
           <div class="poster-rules-grid">
-            <div class="poster-rule date"><span>投稿期間</span><strong>9 月 11 日－10 月 7 日</strong></div>
+            <div class="poster-rule date"><span>投稿期間</span><strong>9 月 11 日－10 月 9 日</strong></div>
             <div class="poster-rule date"><span>錄取通知</span><strong>10 月 16 日</strong></div>
             <div class="poster-rule required"><span>作者大會報名</span><strong>必須完成報名</strong></div>
             <div class="poster-rule required"><span>現場出席</span><strong>必須出席</strong></div>
@@ -977,10 +1099,9 @@
             <div><div class="eyebrow">Registration</div><h2>線上報名</h2><p>請於下方完成 Google 表單；若表單未顯示，可改用新視窗開啟。</p></div>
             <a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLScZYFQjeQBe2adJY1vzz6adAgUJarlGfbLBiXeBKXoH6nUhbg/viewform" target="_blank" rel="noopener noreferrer">新視窗開啟報名表 <span aria-hidden="true">↗</span></a>
           </div>
-          <aside class="registration-notes" aria-labelledby="registration-notes-title">
-            <div class="early-bird-card" role="note" aria-label="早鳥禮遇">
-              <span class="early-bird-icon" aria-hidden="true">🎁</span>
-              <div><strong>早鳥禮遇</strong><p>凡於活動當日上午 <em>8 時 50 分前</em>完成現場簽到者，可獲新臺幣 <em>100 元餐券 1 份</em>；依簽到順序限前 50 名，送完為止。</p></div>
+          <aside class="registration-notes" aria-label="報名與繼續教育資訊">
+            <div class="registration-details">
+              <div class="registration-detail"><h4>繼續教育積分</h4><div class="credit-list"><span>西醫師</span><span>醫檢師</span><span>放射師</span><span>專科護理師</span><span>護理師</span><span>台灣神經學學會</span><span>台灣精神醫學會</span><span>台灣內科醫學會</span><span>台灣老年精神醫學會</span><span>台灣臨床失智症學會</span><span>台灣生活型態學會</span><span>台灣家庭醫學醫學會</span><span>台灣老年學暨老年醫學會</span></div></div>
             </div>
             <h3 id="registration-notes-title">報名須知</h3>
             <div class="registration-facts">
@@ -989,14 +1110,85 @@
               <div class="registration-fact"><span>名額上限</span><strong>300 人</strong></div>
               <div class="registration-fact"><span>餐飲安排</span><strong>本活動備有茶點，恕不提供午餐。</strong></div>
             </div>
-            <div class="registration-details">
-              <div class="registration-detail"><h4>繼續教育積分</h4><div class="credit-list"><span>西醫師</span><span>醫檢師</span><span>放射師</span><span>專科護理師</span><span>護理師</span><span>台灣神經學學會</span><span>台灣精神醫學會</span><span>台灣內科醫學會</span><span>社團法人台灣老年精神醫學會</span><span>台灣臨床失智症學會</span><span>台灣生活型態學會</span></div></div>
+            <div class="early-bird-card" role="note" aria-label="早鳥禮遇">
+              <span class="early-bird-icon" aria-hidden="true">🎁</span>
+              <div><strong>早鳥禮遇</strong><p>凡於活動當日上午 <em>8 時 50 分前</em>完成現場簽到者，可獲新臺幣 <em>100 元餐券 1 份</em><small class="early-bird-limit">（依簽到順序限前 100 名，送完為止）</small></p></div>
             </div>
           </aside>
           <div class="registration-form-wrap">
             <iframe class="registration-form conference-form" title="2026 國際健康管理暨 TPMIC 研討會報名表" src="https://docs.google.com/forms/d/e/1FAIpQLScZYFQjeQBe2adJY1vzz6adAgUJarlGfbLBiXeBKXoH6nUhbg/viewform?embedded=true" loading="lazy" frameborder="0" marginheight="0" marginwidth="0">載入中…</iframe>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="section exhibition-section" id="exhibition" aria-labelledby="exhibition-title">
+      <div class="container">
+        <div class="exhibition-intro reveal">
+          <div class="section-head">
+            <div class="eyebrow">Health Services &amp; Partner Expo</div>
+            <h2 id="exhibition-title">健康服務與交流專區</h2>
+            <p class="section-lead">集結院內特色服務與合作夥伴資訊，現場設有交流攤位及健康資訊展示，歡迎前往參觀與取閱。</p>
+          </div>
+          <div class="exhibition-time"><strong>參觀與取閱</strong>現場攤位建議於上午及下午 Coffee Break 前往交流；DM 資訊可於活動期間取閱。</div>
+        </div>
+        <div class="exhibitor-group" aria-labelledby="onsite-booths-title">
+          <div class="exhibitor-group-head">
+            <h3 id="onsite-booths-title">現場交流攤位 <span>On-site Booths</span></h3>
+            <p>活動當日設有專人與展示內容，歡迎於 Coffee Break 前往諮詢交流。</p>
+          </div>
+          <div class="exhibitor-grid" aria-label="現場交流攤位">
+            <article class="exhibitor-card organizer reveal">
+              <button class="exhibitor-media has-image" type="button" data-exhibitor-lightbox aria-label="放大檢視亞東菁英健康管理中心宣傳圖片"><img src="環境圖/健康管理中心.png" alt="亞東菁英健康管理中心環境與服務介紹" loading="lazy" decoding="async"></button>
+              <div class="exhibitor-copy"><div class="exhibitor-meta"><span class="exhibitor-type">Organizer Booth</span><span class="exhibitor-status onsite">現場攤位</span></div><h3><a href="https://depart.femh.org.tw/hmc/6F.aspx" target="_blank" rel="noopener noreferrer">亞東菁英健康管理中心</a></h3><p>位於醫院北棟 6 樓，整合 PCCT、MRI、PET-CT 等高階影像篩檢，提供隱密舒適的客製健檢、一對一醫師解說、VIP 門診銜接與長期健康追蹤；並結合數位化流程，為高風險及亞健康族群規劃精準、持續的健康管理。</p><a class="exhibitor-link" href="https://depart.femh.org.tw/hmc/6F.aspx" target="_blank" rel="noopener noreferrer">前往官網</a></div>
+            </article>
+            <article class="exhibitor-card reveal">
+              <button class="exhibitor-media has-image" type="button" data-exhibitor-lightbox aria-label="放大檢視亞東醫院形體美容中心宣傳圖片"><img src="環境圖/形體美容中心.png" alt="亞東醫院形體美容中心環境與服務介紹" loading="lazy" decoding="async"></button>
+              <div class="exhibitor-copy"><div class="exhibitor-meta"><span class="exhibitor-type">Exhibitor</span><span class="exhibitor-status onsite">現場攤位</span></div><h3><a href="https://sites.google.com/view/femhcha/?pli=1&amp;authuser=0" target="_blank" rel="noopener noreferrer">亞東醫院形體美容中心</a></h3><p>提供體雕減重、美胸美乳、蟹足腫與腋下多汗症治療，並涵蓋顱顏美容、牙齒美白、正顎、植髮護髮、靜脈曲張及偏頭痛治療。</p><a class="exhibitor-link" href="https://sites.google.com/view/femhcha/?pli=1&amp;authuser=0" target="_blank" rel="noopener noreferrer">前往官網</a></div>
+            </article>
+            <article class="exhibitor-card reveal">
+              <button class="exhibitor-media has-image" type="button" data-exhibitor-lightbox aria-label="放大檢視元智大學醫學研究所招生圖片"><img src="攤位宣傳圖/元智大學研究所招生.png" alt="元智大學醫學研究所招生與跨域醫學研究介紹" loading="lazy" decoding="async"></button>
+              <div class="exhibitor-copy"><div class="exhibitor-meta"><span class="exhibitor-type">Academic Partner</span><span class="exhibitor-status onsite">現場攤位</span></div><h3><a href="https://www.yzu.edu.tw/admissions/index.php/tw/news-tw/1090-116xue-nian-du-shuo-bo-shi-ban-zhen-shi-ru-xue-zhao-sheng-jian-zhang-gong-gao" target="_blank" rel="noopener noreferrer">元智大學醫學研究所</a></h3><p>以跨域醫學研究為特色，整合老化醫學、生物科技與人工智慧，並與亞東紀念醫院深度合作，提供小班制、臨床導向的研究環境，培養智慧健康、精準醫療及國際學術發表能力。</p><a class="exhibitor-link" href="https://www.yzu.edu.tw/admissions/index.php/tw/news-tw/1090-116xue-nian-du-shuo-bo-shi-ban-zhen-shi-ru-xue-zhao-sheng-jian-zhang-gong-gao" target="_blank" rel="noopener noreferrer">查看招生資訊</a></div>
+            </article>
+            <article class="exhibitor-card reveal">
+              <button class="exhibitor-media has-image" type="button" data-exhibitor-lightbox aria-label="放大檢視吉晟生技宣傳圖片"><img src="攤位宣傳圖/吉晟生技.png" alt="吉晟生技 PET 與 pTau 217 宣傳圖" loading="lazy" decoding="async"></button>
+              <div class="exhibitor-copy"><div class="exhibitor-meta"><span class="exhibitor-type">Exhibitor</span><span class="exhibitor-status onsite">現場攤位</span></div><h3><a href="https://www.petpharmbio.com/" target="_blank" rel="noopener noreferrer">吉晟生技</a></h3><p>專注核子醫學及放射性影像與治療藥物研製，具 PIC/S GMP 無菌製劑與高時效冷鏈供應能力；近年布局南北雙廠、自動化新廠及全球 CDMO 業務，推進癌症與阿茲海默症造影及「診療合一」發展。</p><a class="exhibitor-link" href="https://www.petpharmbio.com/" target="_blank" rel="noopener noreferrer">前往官網</a></div>
+            </article>
+            <article class="exhibitor-card reveal">
+              <button class="exhibitor-media has-image" type="button" data-exhibitor-lightbox aria-label="放大檢視百歐精準生物醫學宣傳圖片"><img src="攤位宣傳圖/百歐精準生物醫學_AllBio_公司形象圖卡_16x9.png" alt="百歐精準生物醫學 AllBio 公司形象與精準醫療服務介紹" loading="lazy" decoding="async"></button>
+              <div class="exhibitor-copy"><div class="exhibitor-meta"><span class="exhibitor-type">Exhibitor</span><span class="exhibitor-status onsite">現場攤位</span></div><h3><a href="https://www.allbioscience.com/" target="_blank" rel="noopener noreferrer">百歐精準生物醫學股份有限公司（百歐生醫）</a></h3><p>專注精準醫療、基因定序、客製化抗體與數位健康整合，將基因及藥物資訊轉化為個人化用藥與健康管理方案；並投入蛋白質檢測平台、新藥探索與智慧健康應用研發。</p><a class="exhibitor-link" href="https://www.allbioscience.com/" target="_blank" rel="noopener noreferrer">前往官網</a></div>
+            </article>
+          </div>
+        </div>
+        <div class="exhibitor-group" aria-labelledby="dm-display-title">
+          <div class="exhibitor-group-head">
+            <h3 id="dm-display-title">健康資訊展示 <span>Information &amp; DM</span></h3>
+            <p>現場提供相關服務與產品資訊，歡迎於活動期間自由取閱。</p>
+          </div>
+          <div class="exhibitor-grid" aria-label="健康資訊與DM展示">
+            <article class="exhibitor-card dm-card reveal">
+              <button class="exhibitor-media has-image" type="button" data-exhibitor-lightbox aria-label="放大檢視禮來公司宣傳圖片"><img src="攤位宣傳圖/裡來攤位.png" alt="禮來公司以科學創新創造更健康未來的健康資訊宣傳圖" loading="lazy" decoding="async"></button>
+              <div class="exhibitor-copy"><div class="exhibitor-meta"><span class="exhibitor-type">Information Partner</span><span class="exhibitor-status dm">DM 資訊</span></div><h3><a href="https://zh.wikipedia.org/zh-tw/%E7%A4%BC%E6%9D%A5%E5%85%AC%E5%8F%B8" target="_blank" rel="noopener noreferrer">禮來公司（Eli Lilly and Company）</a></h3><p>聚焦糖尿病、肥胖症、阿茲海默症、腫瘤與免疫疾病等領域，持續推動相關藥物及多元創新療法。</p><a class="exhibitor-link" href="https://zh.wikipedia.org/zh-tw/%E7%A4%BC%E6%9D%A5%E5%85%AC%E5%8F%B8" target="_blank" rel="noopener noreferrer">了解更多</a></div>
+            </article>
+            <article class="exhibitor-card dm-card reveal">
+              <button class="exhibitor-media has-image" type="button" data-exhibitor-lightbox aria-label="放大檢視冷泉港生物科技宣傳圖片"><img src="攤位宣傳圖/冷泉港生物科技_公司形象宣傳圖_16x9.png" alt="冷泉港生物科技公司形象與研究應用服務宣傳圖" loading="lazy" decoding="async"></button>
+              <div class="exhibitor-copy"><div class="exhibitor-meta"><span class="exhibitor-type">Information Partner</span><span class="exhibitor-status dm">DM 資訊</span></div><h3><a href="https://www.csbiotech.com.tw/index.aspx" target="_blank" rel="noopener noreferrer">冷泉港生物科技股份有限公司</a></h3><p>提供小動物影像、精準醫學多體學、自動化移液處理、細胞再生醫學與微生物應用等研究方案，以及相關儀器與試劑。</p><a class="exhibitor-link" href="https://www.csbiotech.com.tw/index.aspx" target="_blank" rel="noopener noreferrer">前往官網</a></div>
+            </article>
+            <article class="exhibitor-card dm-card reveal">
+              <button class="exhibitor-media has-image" type="button" data-exhibitor-lightbox aria-label="放大檢視上準微流體 MiCareo 宣傳圖片"><img src="攤位宣傳圖/上準微流體.png" alt="上準微流體 MiCareo 循環腫瘤細胞與精準醫療服務介紹" loading="lazy" decoding="async"></button>
+              <div class="exhibitor-copy"><div class="exhibitor-meta"><span class="exhibitor-type">Information Partner</span><span class="exhibitor-status dm">DM 資訊</span></div><h3><a href="https://www.micareo.com/" target="_blank" rel="noopener noreferrer">上準微流體（MiCareo）</a></h3><p>專注微流體晶片與自動化系統，透過非侵入性液態切片自血液分離循環腫瘤細胞（CTCs），協助癌症早期轉移預警、療效與預後監測，並支援基因分析及體外藥物測試，作為個人化精準用藥參考。</p><a class="exhibitor-link" href="https://www.micareo.com/" target="_blank" rel="noopener noreferrer">前往官網</a></div>
+            </article>
+            <article class="exhibitor-card dm-card reveal">
+              <button class="exhibitor-media has-image" type="button" data-exhibitor-lightbox aria-label="放大檢視金萬林企業宣傳圖片"><img src="攤位宣傳圖/金萬林企業_OneStopSolution_企業形象圖_16x9_圖.png" alt="金萬林企業 One Stop Solution 精準醫療服務介紹" loading="lazy" decoding="async"></button>
+              <div class="exhibitor-copy"><div class="exhibitor-meta"><span class="exhibitor-type">Information Partner</span><span class="exhibitor-status dm">DM 資訊</span></div><h3><a href="https://www.kimforest.com/index.php?action=index" target="_blank" rel="noopener noreferrer">金萬林企業股份有限公司</a></h3><p>深耕分子檢測與精準醫療，提供一站式科研儀器試劑、癌症精準用藥與遺傳性癌症風險評估；並透過 GoL Life 非侵入性基因檢測結合生醫大數據，協助個人健康管理與疾病預防。</p><a class="exhibitor-link" href="https://www.kimforest.com/index.php?action=index" target="_blank" rel="noopener noreferrer">前往官網</a></div>
+            </article>
+            <article class="exhibitor-card dm-card reveal">
+              <button class="exhibitor-media has-image" type="button" data-exhibitor-lightbox aria-label="放大檢視思微智能宣傳圖片"><img src="攤位宣傳圖/KVQ思微智能_AI愛腦快篩_企業形象圖_16x9_圖.png" alt="KVQ 思微智能 AI 愛腦快篩企業形象與服務介紹" loading="lazy" decoding="async"></button>
+              <div class="exhibitor-copy"><div class="exhibitor-meta"><span class="exhibitor-type">Information Partner</span><span class="exhibitor-status dm">DM 資訊</span></div><h3><a href="https://kvqintellect.com/" target="_blank" rel="noopener noreferrer">思微智能（KVQ Intellect）</a></h3><p>源自元智大學的高齡科技與智慧健康 AI 新創。核心產品「愛腦快篩（AI-MindSnap）」透過 1 分鐘語音及 AI 聲紋、語意分析，快速評估失智症與輕度認知障礙風險，並支援長期追蹤及醫療照護機構應用。</p><a class="exhibitor-link" href="https://kvqintellect.com/" target="_blank" rel="noopener noreferrer">前往官網</a></div>
+            </article>
+          </div>
+        </div>
+        <p class="exhibition-note">參展內容與現場配置將依活動安排更新。</p>
       </div>
     </section>
 
@@ -1011,7 +1203,7 @@
         <div class="centers-grid" role="tablist" aria-label="選擇健康管理部服務中心">
           <article class="center-card reveal is-active" data-center-card="hmc">
             <button class="center-card-select" id="center-tab-hmc" type="button" role="tab" aria-selected="true" aria-controls="center-panel-hmc" data-center-target="hmc">
-              <h3>健康管理中心</h3>
+              <h3>菁英健康管理中心</h3>
             </button>
           </article>
           <article class="center-card reveal" data-center-card="hboc">
@@ -1037,12 +1229,12 @@
         </div>
         <div class="center-highlights reveal" id="center-highlights" aria-live="polite">
           <section class="center-panel" id="center-panel-hmc" role="tabpanel" aria-labelledby="center-tab-hmc" data-center-panel="hmc">
-            <div class="center-panel-head"><div><span class="center-panel-kicker">Recent Service Highlights</span><h3>健康管理中心｜近期服務亮點</h3></div><a class="btn ghost" href="https://depart.femh.org.tw/HMC/6F.aspx" target="_blank" rel="noopener noreferrer">前往中心網站 <span aria-hidden="true">↗</span></a></div>
-            <a class="center-panel-visual" href="https://depart.femh.org.tw/HMC/6F.aspx" target="_blank" rel="noopener noreferrer" aria-label="前往健康管理中心官方網站"><img src="環境圖/健康管理中心.png" alt="亞東紀念醫院健康管理中心環境" loading="lazy" decoding="async"></a>
-            <div class="center-promo-carousel" data-promo-carousel aria-label="健康管理中心服務亮點輪播">
+            <div class="center-panel-head"><div><span class="center-panel-kicker">Recent Service Highlights</span><h3>亞東菁英健康管理中心｜近期服務亮點</h3></div><a class="btn ghost" href="https://depart.femh.org.tw/hmc/6F.aspx" target="_blank" rel="noopener noreferrer">前往中心網站 <span aria-hidden="true">↗</span></a></div>
+            <a class="center-panel-visual" href="https://depart.femh.org.tw/hmc/6F.aspx" target="_blank" rel="noopener noreferrer" aria-label="前往亞東菁英健康管理中心官方網站"><img src="環境圖/健康管理中心.png" alt="亞東菁英健康管理中心環境" loading="lazy" decoding="async"></a>
+            <div class="center-promo-carousel" data-promo-carousel aria-label="亞東菁英健康管理中心服務亮點輪播">
               <article class="center-promo-card center-promo-slide" data-promo-slide aria-label="第 1 則：PCCT 服務介紹">
                 <div class="center-promo-media">
-                  <iframe id="pcct-youtube-player" data-youtube-player src="https://www.youtube.com/embed/QX665QHnBnc?enablejsapi=1&amp;autoplay=1&amp;mute=1&amp;playsinline=1&amp;rel=0" title="健康管理中心 PCCT 宣傳影片" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                  <iframe id="pcct-youtube-player" data-youtube-player src="https://www.youtube.com/embed/QX665QHnBnc?enablejsapi=1&amp;autoplay=1&amp;mute=1&amp;playsinline=1&amp;rel=0" title="亞東菁英健康管理中心 PCCT 宣傳影片" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
                 <div class="center-promo-copy">
                   <span class="center-promo-label">Featured Service</span>
@@ -1313,6 +1505,21 @@
     <div class="speaker-dialog-header"><span>講者資訊｜Speaker Profile</span><button class="speaker-dialog-close" type="button" aria-label="關閉講者資訊視窗">×</button></div>
     <div class="speaker-dialog-content" id="speaker-dialog-content"></div>
   </dialog>
+  <dialog class="image-lightbox" id="exhibitor-lightbox" aria-labelledby="exhibitor-lightbox-title">
+    <div class="image-lightbox-head">
+      <h2 class="image-lightbox-title" id="exhibitor-lightbox-title">宣傳圖片</h2>
+      <button class="image-lightbox-close" type="button" aria-label="關閉放大圖片">×</button>
+    </div>
+    <div class="image-lightbox-stage">
+      <button class="image-lightbox-nav image-lightbox-prev" type="button" aria-label="上一張圖片">‹</button>
+      <img id="exhibitor-lightbox-image" src="" alt="">
+      <button class="image-lightbox-nav image-lightbox-next" type="button" aria-label="下一張圖片">›</button>
+    </div>
+    <div class="image-lightbox-foot">
+      <p class="image-lightbox-caption" id="exhibitor-lightbox-caption"></p>
+      <span class="image-lightbox-count" id="exhibitor-lightbox-count" aria-live="polite"></span>
+    </div>
+  </dialog>
   <button class="back-top" id="back-top" type="button" aria-label="回到頁面頂端">↑</button>
 
   <script>
@@ -1390,6 +1597,58 @@
         speakerDialogContent.replaceChildren();
         speakerReturnFocus?.focus();
         speakerReturnFocus = null;
+      });
+
+      const lightbox = document.getElementById('exhibitor-lightbox');
+      const lightboxTriggers = [...document.querySelectorAll('[data-exhibitor-lightbox]')];
+      const lightboxImage = document.getElementById('exhibitor-lightbox-image');
+      const lightboxTitle = document.getElementById('exhibitor-lightbox-title');
+      const lightboxCaption = document.getElementById('exhibitor-lightbox-caption');
+      const lightboxCount = document.getElementById('exhibitor-lightbox-count');
+      const lightboxClose = lightbox.querySelector('.image-lightbox-close');
+      const lightboxPrevious = lightbox.querySelector('.image-lightbox-prev');
+      const lightboxNext = lightbox.querySelector('.image-lightbox-next');
+      let lightboxIndex = 0;
+      let lightboxReturnFocus = null;
+
+      function showLightboxImage(index) {
+        if (!lightboxTriggers.length) return;
+        lightboxIndex = (index + lightboxTriggers.length) % lightboxTriggers.length;
+        const trigger = lightboxTriggers[lightboxIndex];
+        const image = trigger.querySelector('img');
+        const card = trigger.closest('.exhibitor-card');
+        const name = card?.querySelector('.exhibitor-copy h3')?.textContent.trim() || '宣傳圖片';
+        lightboxImage.src = image.currentSrc || image.getAttribute('src');
+        lightboxImage.alt = image.alt;
+        lightboxTitle.textContent = name;
+        lightboxCaption.textContent = image.alt;
+        lightboxCount.textContent = `${lightboxIndex + 1} / ${lightboxTriggers.length}`;
+      }
+
+      lightboxTriggers.forEach((trigger, index) => trigger.addEventListener('click', () => {
+        lightboxReturnFocus = trigger;
+        showLightboxImage(index);
+        lightbox.showModal();
+        lightboxClose.focus();
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', 'exhibitor_image_view', {
+            image_name: lightboxTitle.textContent,
+            page_section: 'exhibition'
+          });
+        }
+      }));
+      lightboxClose.addEventListener('click', () => lightbox.close());
+      lightboxPrevious.addEventListener('click', () => showLightboxImage(lightboxIndex - 1));
+      lightboxNext.addEventListener('click', () => showLightboxImage(lightboxIndex + 1));
+      lightbox.addEventListener('click', event => { if (event.target === lightbox) lightbox.close(); });
+      lightbox.addEventListener('keydown', event => {
+        if (event.key === 'ArrowLeft') { event.preventDefault(); showLightboxImage(lightboxIndex - 1); }
+        if (event.key === 'ArrowRight') { event.preventDefault(); showLightboxImage(lightboxIndex + 1); }
+      });
+      lightbox.addEventListener('close', () => {
+        lightboxImage.removeAttribute('src');
+        lightboxReturnFocus?.focus();
+        lightboxReturnFocus = null;
       });
       const centerTabs = [...document.querySelectorAll('[data-center-target]')];
       const centerCards = [...document.querySelectorAll('[data-center-card]')];
