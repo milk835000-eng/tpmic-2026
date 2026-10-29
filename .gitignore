@@ -3,6 +3,9 @@
 /*.pdf
 /ids.indexOf(x)!
 
+# Local nested project copy (contains its own Git metadata and internal files)
+/TPMIC/
+
 # Source-only speaker logistics and CV files
 /講者資訊/*.docx
 /講者資訊/*.pdf
